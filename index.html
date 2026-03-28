@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="top-titles">
+                TRƯỜNG ĐẠI HỌC ĐÀ LẠT<br>
+                TRUNG TÂM NGOẠI NGỮ VÀ ĐÀO TẠO NGUỒN NHÂN LỰC<br>
+                TÀI LIỆU ÔN KỸ NĂNG NGHE - BẬC 5/6 - Tháng 2/2026
+            </div>
+            <div class="test-selector-container" style="text-align: center; margin-top: 1rem;">
+                <h1 style="margin-bottom: 0.5rem; display: inline-block; margin-right: 1rem;" id="test-title">Practice test 1</h1>
+                <select id="test-selector" style="font-size: 1rem; padding: 0.3rem 0.5rem; border: 1px solid #000; background: #fff;">
+                    <option value="test1">Practice Test 1</option>
+                    <option value="test2">Practice Test 2</option>
+                </select>
+            </div>
+        </header>
+
+        <main id="test-container"></main>
+
+        <div class="score-display" id="score-display"></div>
+
+        <div class="action-bar">
+            <button class="btn" id="btn-check">Check Answers</button>
+            <button class="btn" id="btn-retry">Clear & Retry</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
