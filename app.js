@@ -1760,6 +1760,103 @@ const tests = {
                 { id: "t5q40", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Victor Hugo's 40", postText: "gave ownership of the house to the city of Paris in 1927.", answer: ["relatives"] }
             ]
         }
+    ],
+    writing_test1: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (1. Văn hóa - Đề 1)</h3>
+<p>Some believe that people today have no interest in maintaining the traditional culture of their country or region. Others believe it is still important to preserve a traditional way of life.</p>
+<p>Discuss both views.</p>`,
+            sample: `<p>Today, many people think that traditional culture is not important anymore. However, other people think we must keep it. This essay will discuss both ideas.</p>
+<p>First, some people do not care about traditional culture. Because of the internet and smartphones, young people see many things from other countries every day. They like foreign music, clothes and food more than their own culture. For example, in Vietnam, young people prefer jeans and t-shirts instead of ao dai. Also, life today is very busy, so people do not have time to learn old traditions. They think that old customs are not useful in modern life.</p>
+<p>However, other people think that traditional culture is very important. Culture helps people know who they are and where they come from. If we lose our culture, we lose our identity. For example, traditional festivals like Tet help family members come together and remember old values. In addition, tourists come to see traditional culture, so it helps the country earn money. Therefore, keeping culture is good for society.</p>
+<p>In conclusion, some people think that traditional culture is not interesting anymore because modern life is very different. However, I think we should still keep our culture because it is important for our identity and for our country. Governments and schools should help young people learn about their traditions.</p>`
+        }
+    ],
+    writing_test2: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (2. Văn hóa — Đề 2)</h3>
+<p>People should follow the customs and traditions when they start to live in a new country.</p>
+<p>To what extent do you agree or disagree?</p>`,
+            sample: `<p>Nowadays, many people move to live in a new country. Some people think that they should follow the local customs and traditions of that country. I agree with this idea, but I think people should also keep their own culture.</p>
+<p>On one hand, following local customs is very important. When people follow local traditions, they can communicate better with local people and make friends easily. For example, if a person moves to Japan, they should learn to bow when they greet people, because this is the local custom. Also, following local rules helps people feel comfortable and accepted in their new community.</p>
+<p>On the other hand, people should not forget their own culture. Their traditions and customs are part of their identity. For example, a Vietnamese person living abroad can still celebrate Tet with their family. This helps them remember their roots and feel connected to their home country. Losing their own culture completely can make people feel lost and confused.</p>
+<p>In conclusion, I think people should try to follow local customs when they live in a new country because it helps them integrate into society. However, they should also keep their own traditions because culture is an important part of who they are.</p>`
+        }
+    ],
+    writing_test3: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (3. Giáo dục — Đề 1)</h3>
+<p>Some people think that it is better to educate boys and girls in separate schools. Others believe that boys and girls benefit from attending mixed schools.</p>
+<p>Discuss both views and give your own opinion.</p>`,
+            sample: `<p>Nowadays, there is a debate about whether boys and girls should study in separate schools or together. This essay will discuss both views and give my opinion.</p>
+<p>First, some people think that separate schools are better. They believe that boys and girls learn differently, so they need different teaching methods. In a single-sex school, students may feel less distracted and can focus more on their studies. For example, some research shows that girls in all-girls schools get better grades because they are not shy to answer questions in class.</p>
+<p>However, other people think that mixed schools are better. In real life, men and women work together, so students should learn to communicate with the opposite gender from a young age. Mixed schools help students develop social skills and respect for each other. Also, mixed schools are more common, so they are more convenient for many families.</p>
+<p>In my opinion, mixed schools are better because they prepare students for real life. Students need to learn how to cooperate with everyone, not just people of the same gender. However, schools should make sure that all students feel safe and comfortable in the classroom.</p>
+<p>In conclusion, while separate schools have some benefits, I believe mixed schools are more useful because they help students develop important social skills for the future.</p>`
+        }
+    ],
+    writing_test4: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (4. Giáo dục — Đề 2)</h3>
+<p>Today, many teenagers rely greatly on technology when learning.</p>
+<p>Is this a positive or negative development?</p>`,
+            sample: `<p>Today, many teenagers use technology such as computers, smartphones and the internet to help them study. Some people think this is good, but others think it is bad. In my opinion, this development has both positive and negative effects.</p>
+<p>On one hand, technology has many benefits for learning. Students can find information very quickly on the internet instead of spending hours in the library. They can also watch videos and use apps to learn in a fun and interesting way. For example, many students use YouTube to watch lessons that explain difficult topics clearly. In addition, technology helps students who live in remote areas to access good education online.</p>
+<p>On the other hand, there are some negative effects. Many teenagers become too dependent on technology and cannot study without it. They also get distracted easily by social media and games when they are supposed to be studying. Furthermore, some students just copy answers from the internet instead of thinking for themselves, so they do not really learn anything.</p>
+<p>In conclusion, I think using technology for learning is mostly a positive development because it makes education more accessible and interesting. However, students should learn to use technology in a responsible way. Teachers and parents should guide teenagers to use technology only for studying and not for entertainment during study time.</p>`
+        }
+    ],
+    writing_test5: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (5. Công nghệ — Đề 1)</h3>
+<p>Many jobs are being automated by robots and artificial intelligence.</p>
+<p>Do the advantages of this development outweigh the disadvantages?</p>`,
+            sample: `<p>Today, many jobs that were done by people are now done by robots and artificial intelligence. Some people think this is a good thing, but others are worried. In my opinion, the disadvantages are greater than the advantages.</p>
+<p>On one hand, automation has some clear benefits. Robots can work faster and more accurately than humans, so they can produce more goods in less time. This helps companies save money and increase profit. Also, robots can do dangerous jobs such as working in mines or handling chemicals, so fewer workers get injured. In addition, automation can make products cheaper for consumers.</p>
+<p>On the other hand, automation causes many serious problems. The biggest problem is unemployment. When robots replace workers, many people lose their jobs and cannot support their families. For example, in many factories today, machines have already replaced thousands of workers. Another problem is that automation mostly affects low-skilled workers who do not have the education or skills to find new jobs easily. This makes inequality in society worse.</p>
+<p>In conclusion, although automation makes production faster and safer, I think the disadvantages are bigger because it causes unemployment and increases inequality. Governments should invest in education and job training programs to help workers learn new skills so they can find jobs in other industries.</p>`
+        }
+    ],
+    writing_test6: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (6. Công nghệ — Đề 2)</h3>
+<p>Nowadays, the way many people interact with each other has changed because of technology.</p>
+<p>In what ways has technology affected relationships? Has this been a positive or negative development?</p>`,
+            sample: `<p>Today, technology has changed the way people communicate and build relationships. This essay will explain how technology has affected relationships and whether this is good or bad.</p>
+<p>Technology has changed relationships in several ways. First, people can now communicate with friends and family who live far away very easily. With apps like Zalo, Facebook and video calls, people can talk to each other anytime and anywhere. This helps people stay connected even when they are in different countries. Second, social media allows people to make new friends online and join communities with similar interests.</p>
+<p>However, technology has also damaged some relationships. Many people spend too much time on their phones even when they are with their family or friends. This means they do not have real conversations and the relationship becomes less close. For example, it is very common to see a family eating dinner together but everyone is looking at their phone instead of talking to each other. Also, online relationships are sometimes not real, and people can feel lonely even though they have many online friends.</p>
+<p>In conclusion, I think technology has had both positive and negative effects on relationships. While it helps people stay connected across long distances, it also reduces the quality of face-to-face relationships. I believe this is mostly a negative development because real human connection is more important than online communication.</p>`
+        }
+    ],
+    writing_test7: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (7. Môi trường — Đề 1)</h3>
+<p>Some people argue that individuals can do nothing to improve the environment. Only governments and large companies can make a difference.</p>
+<p>To what extent do you agree or disagree?</p>`,
+            sample: `<p>Some people believe that only governments and big companies can help the environment, and ordinary people cannot do anything useful. I disagree with this idea because I think both individuals and organisations need to work together.</p>
+<p>On one hand, governments and large companies do have more power to protect the environment. They can make laws to limit pollution and force factories to use cleaner technology. For example, a government can ban plastic bags or require companies to reduce carbon emissions. Big companies can also invest in renewable energy such as solar or wind power. These actions have a much bigger effect than what one person can do.</p>
+<p>On the other hand, individuals can also help the environment in many ways. People can reduce waste by recycling and using less plastic. They can save energy by turning off lights and using public transport instead of driving. If millions of people make small changes every day, the total effect is very large. For example, if everyone in Vietnam uses a reusable bag instead of a plastic bag, this can significantly reduce plastic pollution.</p>
+<p>In conclusion, I disagree that individuals cannot help the environment. While governments and companies have more power, every person has a responsibility to make better choices in their daily life. The best results come when governments, companies and individuals all work together to protect the environment.</p>`
+        }
+    ],
+    writing_test8: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 (8. Môi trường — Đề 2)</h3>
+<p>Long distance flights consume a large amount of fuel and pollute the air. Some people think we should discourage non-essential flights such as tourist travel.</p>
+<p>To what extent do you agree or disagree?</p>`,
+            sample: `<p>Nowadays, many people travel by plane for holidays and tourism. However, planes use a lot of fuel and cause air pollution. Some people think we should reduce unnecessary flights. I partially agree with this idea.</p>
+<p>On one hand, reducing non-essential flights can help the environment. Planes produce a large amount of carbon dioxide, which causes climate change. If fewer people fly for tourism, the amount of pollution will decrease. Governments can discourage unnecessary flights by adding higher taxes on plane tickets, so people will think more carefully before booking a flight. They may choose to travel by train or bus instead, which is much better for the environment.</p>
+<p>On the other hand, discouraging tourist flights has some negative effects. Tourism is very important for the economy of many countries, especially developing countries. If fewer tourists visit, local businesses such as hotels and restaurants will lose money and many people will lose their jobs. Also, travelling helps people learn about different cultures and builds connections between countries. Stopping people from travelling is not a practical or fair solution.</p>
+<p>In conclusion, I think we should try to reduce unnecessary flights to protect the environment, but we should not ban tourist travel completely. A better solution is to make planes more fuel-efficient and to encourage airlines to use cleaner technology so that flying becomes less harmful to the environment.</p>`
+        }
     ]
 };
 
@@ -1790,6 +1887,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Practice Reading Test 2';
             } else if (currentTestId === 'reading_test3') {
                 document.getElementById('test-title').textContent = 'Practice Reading Test 3';
+            } else if (currentTestId === 'writing_test1') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (1. Văn hóa - Đề 1)';
+            } else if (currentTestId === 'writing_test2') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (2. Văn hóa - Đề 2)';
+            } else if (currentTestId === 'writing_test3') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (3. Giáo dục - Đề 1)';
+            } else if (currentTestId === 'writing_test4') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (4. Giáo dục - Đề 2)';
+            } else if (currentTestId === 'writing_test5') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (5. Công nghệ - Đề 1)';
+            } else if (currentTestId === 'writing_test6') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (6. Công nghệ - Đề 2)';
+            } else if (currentTestId === 'writing_test7') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (7. Môi trường - Đề 1)';
+            } else if (currentTestId === 'writing_test8') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (8. Môi trường - Đề 2)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
@@ -1809,6 +1922,66 @@ function renderTest() {
         const partEl = document.createElement('div');
         
         let targetPane = partEl;
+
+        if (part.isWriting) {
+            const splitLayout = document.createElement('div');
+            splitLayout.className = 'writing-layout';
+            
+            const promptPane = document.createElement('div');
+            promptPane.className = 'writing-prompt-pane';
+            promptPane.innerHTML = part.prompt;
+            splitLayout.appendChild(promptPane);
+            
+            const editorPane = document.createElement('div');
+            editorPane.className = 'writing-editor-pane';
+            
+            const textarea = document.createElement('textarea');
+            textarea.className = 'essay-textarea';
+            textarea.placeholder = 'Start writing your essay here...';
+            
+            const wordCount = document.createElement('div');
+            wordCount.className = 'word-count';
+            wordCount.textContent = 'Words: 0';
+            
+            textarea.addEventListener('input', () => {
+                const words = textarea.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+                wordCount.textContent = 'Words: ' + words;
+            });
+            
+            const sampleBtn = document.createElement('button');
+            sampleBtn.className = 'btn';
+            sampleBtn.style.alignSelf = 'flex-start';
+            sampleBtn.textContent = 'Show Sample Essay';
+            
+            const sampleBox = document.createElement('div');
+            sampleBox.className = 'sample-essay-box';
+            sampleBox.innerHTML = part.sample;
+            
+            sampleBtn.addEventListener('click', () => {
+                if (sampleBox.style.display === 'block') {
+                    sampleBox.style.display = 'none';
+                    sampleBtn.textContent = 'Show Sample Essay';
+                } else {
+                    sampleBox.style.display = 'block';
+                    sampleBtn.textContent = 'Hide Sample Essay';
+                }
+            });
+            
+            editorPane.appendChild(textarea);
+            editorPane.appendChild(wordCount);
+            editorPane.appendChild(sampleBtn);
+            editorPane.appendChild(sampleBox);
+            splitLayout.appendChild(editorPane);
+            
+            partEl.appendChild(splitLayout);
+            container.appendChild(partEl);
+            
+            document.querySelector('.action-bar').style.display = 'none';
+            return;
+        } else {
+            document.querySelector('.action-bar').style.display = 'block';
+        }
+
         if (part.passage) {
             const splitLayout = document.createElement('div');
             splitLayout.className = 'reading-layout';
