@@ -1193,7 +1193,7 @@ const tests = {
                 { id: "t3_text_bring", type: "text", text: "<br><strong>What to bring</strong><div style='margin-left:1rem; margin-top:0.5rem;'>&bull; \u00A0 a change of clothing</div>" },
                 { id: "t3q6", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 a 6", postText: "", answer: ["snack"] },
                 { id: "t3_text_shoes", type: "text", text: "<div style='margin-left:1rem;'>&bull; \u00A0 shoes (not sandals)</div>" },
-                { id: "t3q7", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Charlie's 7", postText: "medication", answer: ["medication"] },
+                { id: "t3q7", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Charlie's 7", postText: "", answer: ["medication"] },
                 { id: "t3_text_day1", type: "text", text: "<br><strong>Day 1</strong><div style='margin-left:1rem; margin-top:0.5rem;'>&bull; \u00A0 Charlie should arrive at 9.20 am on the first day.</div>" },
                 { id: "t3q8", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Before the class, his 8", postText: "will be checked.", answer: ["helmet"] },
                 { id: "t3q9", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 He should then go to the 9", postText: "to meet his class instructor.", answer: ["tent"] },
@@ -1376,7 +1376,7 @@ const tests = {
                 { id: "t3q37", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 The first needles were made of natural materials such as wood and 37", postText: ".", answer: ["bone"] },
                 { id: "t3q38", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Early yarns felt 38", postText: "to touch.", answer: ["rough"] },
                 { id: "t3q38_text_post", type: "text", text: "<div style='margin-left:1rem; margin-top:0.5rem;'>&bull; \u00A0 Wool became the most popular yarn for spinning.</div>" },
-                { id: "t3q39", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Geographical areas had their own 39", postText: "style of knitting.", answer: ["style"] },
+                { id: "t3q39", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Geographical areas had their own 39", postText: "of knitting.", answer: ["style"] },
                 { id: "t3q40", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Everyday tasks like looking after 40", postText: "were done while knitting.", answer: ["sheep"] }
             ]
         }
@@ -1862,6 +1862,128 @@ const tests = {
 
 let currentTestId = 'test1';
 
+// Lưu bản gốc 5 đề listening và 3 đề reading để có thể khôi phục
+const originalListeningTests = {
+    test1: tests.test1,
+    test2: tests.test2,
+    test3: tests.test3,
+    test4: tests.test4,
+    test5: tests.test5
+};
+
+const originalReadingTests = {
+    reading_test1: tests.reading_test1,
+    reading_test2: tests.reading_test2,
+    reading_test3: tests.reading_test3
+};
+
+// Nhóm các section của 1 test thành 4 part
+function groupIntoParts(testSections) {
+    const parts = [];
+    let currentPart = [];
+    testSections.forEach(section => {
+        if (section.title && /PART\s+\d/.test(section.title)) {
+            if (currentPart.length > 0) parts.push(currentPart);
+            currentPart = [section];
+        } else {
+            currentPart.push(section);
+        }
+    });
+    if (currentPart.length > 0) parts.push(currentPart);
+    return parts;
+}
+
+// Fisher-Yates shuffle
+function shuffleArray(arr) {
+    const shuffled = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+// Xáo trộn các part giữa 5 đề listening
+function shuffleListeningTests() {
+    const testKeys = ['test1', 'test2', 'test3', 'test4', 'test5'];
+
+    // Nhóm mỗi test thành 4 part
+    const allParts = testKeys.map(key => groupIntoParts(originalListeningTests[key]));
+
+    // Gom theo loại part: partsByType[i] = mảng 5 phần Part (i+1) từ 5 đề
+    const partsByType = [[], [], [], []];
+    allParts.forEach(testParts => {
+        testParts.forEach((part, idx) => {
+            if (idx < 4) partsByType[idx].push(part);
+        });
+    });
+
+    // Xáo trộn độc lập từng loại part
+    const shuffledByType = partsByType.map(parts => shuffleArray(parts));
+
+    // Ghép lại thành 5 đề mới
+    testKeys.forEach((key, testIdx) => {
+        const newTest = [];
+        shuffledByType.forEach(shuffledParts => {
+            newTest.push(...shuffledParts[testIdx]);
+        });
+        tests[key] = newTest;
+    });
+
+    // Re-render
+    document.getElementById('score-display').textContent = '';
+    renderTest();
+
+    // Hiện nút khôi phục
+    document.getElementById('btn-restore').style.display = 'inline';
+}
+
+// Khôi phục đề gốc listening
+function restoreListeningTests() {
+    const testKeys = ['test1', 'test2', 'test3', 'test4', 'test5'];
+    testKeys.forEach(key => { tests[key] = originalListeningTests[key]; });
+    document.getElementById('score-display').textContent = '';
+    renderTest();
+    document.getElementById('btn-restore').style.display = 'none';
+}
+
+// Xáo trộn các passage giữa 3 đề reading
+function shuffleReadingTests() {
+    const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
+
+    // Mỗi reading test có 3 passage (3 phần tử trong mảng), tương ứng Passage 1, 2, 3
+    // passagesByPos[i] = mảng 3 passage ở vị trí i từ 3 đề
+    const passagesByPos = [[], [], []];
+    testKeys.forEach(key => {
+        originalReadingTests[key].forEach((passage, idx) => {
+            if (idx < 3) passagesByPos[idx].push(passage);
+        });
+    });
+
+    // Xáo trộn độc lập từng vị trí passage
+    const shuffledByPos = passagesByPos.map(passages => shuffleArray(passages));
+
+    // Ghép lại thành 3 đề mới
+    testKeys.forEach((key, testIdx) => {
+        tests[key] = shuffledByPos.map(shuffledPassages => shuffledPassages[testIdx]);
+    });
+
+    // Re-render
+    document.getElementById('score-display').textContent = '';
+    renderTest();
+
+    // Hiện nút khôi phục
+    document.getElementById('btn-restore-reading').style.display = 'inline';
+}
+
+// Khôi phục đề gốc reading
+function restoreReadingTests() {
+    const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
+    testKeys.forEach(key => { tests[key] = originalReadingTests[key]; });
+    document.getElementById('score-display').textContent = '';
+    renderTest();
+    document.getElementById('btn-restore-reading').style.display = 'none';
+}
 
 let totalQuestions = 0;
 let answeredCorrectly = 0;
@@ -2078,6 +2200,10 @@ function renderTest() {
 function setupEventListeners() {
     document.getElementById('btn-check').addEventListener('click', checkAnswers);
     document.getElementById('btn-retry').addEventListener('click', retryIncorrect);
+    document.getElementById('btn-shuffle').addEventListener('click', shuffleListeningTests);
+    document.getElementById('btn-restore').addEventListener('click', restoreListeningTests);
+    document.getElementById('btn-shuffle-reading').addEventListener('click', shuffleReadingTests);
+    document.getElementById('btn-restore-reading').addEventListener('click', restoreReadingTests);
 }
 
 function checkAnswers() {
