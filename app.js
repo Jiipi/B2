@@ -2034,6 +2034,10 @@ function shuffleReadingTests() {
     const allParts = testKeys.map(key => getReadingPassageGroups(originalReadingTests[key]));
 
     const state = getShuffleState();
+    if (!state.reading.usedByPos || !Array.isArray(state.reading.usedByPos) || state.reading.usedByPos.length !== 3) {
+        state.reading.usedByPos = [[], [], []];
+        state.reading.round = 0;
+    }
     let usedByPos = state.reading.usedByPos;
 
     // Nếu tất cả 3 vị trí đã dùng hết 3 đề → reset để bắt đầu chu kỳ mới
