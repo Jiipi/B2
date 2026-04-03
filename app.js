@@ -1913,7 +1913,7 @@ function getShuffleState() {
     } catch (e) {}
     return {
         listening: { usedByPos: [[], [], [], []], round: 0 },
-        reading:   { usedByPos: [[], [], []], round: 0 }
+        reading:   { round: 0 }
     };
 }
 
@@ -2031,51 +2031,35 @@ function getReadingPassageGroups(testParts) {
 function shuffleReadingTests() {
     const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
 
+    // Gom tất cả 9 passage groups từ 3 đề (mỗi đề 3 passage)
+    const allGroups = testKeys.flatMap(key =>
+        getReadingPassageGroups(originalReadingTests[key])
+    ); // 9 groups tổng
+
+    // Xáo hết 9 groups
+    const shuffled = shuffleArray(allGroups);
+
+    // Chia đều 3 groups cho mỗi đề, đảm bảo đủ cả 9 groups không thiếu
+    tests['reading_test1'] = shuffled.slice(0, 3).flat();
+    tests['reading_test2'] = shuffled.slice(3, 6).flat();
+    tests['reading_test3'] = shuffled.slice(6, 9).flat();
+
     const state = getShuffleState();
-    let usedByPos = state.reading.usedByPos;
-
-    // Nếu tất cả 3 vị trí đã dùng hết 3 đề → reset
-    const allDone = usedByPos.every(used => used.length >= 3);
-    if (allDone) {
-        usedByPos = [[], [], []];
-        state.reading.round = 0;
-        state.reading.usedByPos = usedByPos;
-        saveShuffleState(state);
-    }
-
-    // Với mỗi vị trí passage (0-2), chọn ngẫu nhiên một đề chưa được dùng ở vị trí đó
-    const selectedIndices = [];
-    for (let pos = 0; pos < 3; pos++) {
-        const available = [0, 1, 2].filter(i => !usedByPos[pos].includes(i));
-        const picked = available[Math.floor(Math.random() * available.length)];
-        selectedIndices.push(picked);
-        usedByPos[pos].push(picked);
-    }
-
-    state.reading.round++;
-    state.reading.usedByPos = usedByPos;
+    state.reading.round = (state.reading.round || 0) + 1;
+    if (state.reading.round > 6) state.reading.round = 1;
     saveShuffleState(state);
-
-    // Ghép thành 1 đề reading: Passage 1 từ đề selectedIndices[0], ...
-    tests['reading_test1'] = selectedIndices.flatMap(
-        (testIdx, pos) => getReadingPassageGroups(originalReadingTests[testKeys[testIdx]])[pos]
-    );
 
     // Tự động chuyển sang reading_test1
     currentTestId = 'reading_test1';
     const selector = document.getElementById('test-selector');
     if (selector) selector.value = 'reading_test1';
     const titleEl = document.getElementById('test-title');
-    if (titleEl) titleEl.textContent = `Reading Xáo - Lần ${state.reading.round}/3`;
+    if (titleEl) titleEl.textContent = `Reading Xáo - Lần ${state.reading.round}`;
 
     document.getElementById('score-display').textContent = '';
     renderTest();
     updateShuffleProgressUI();
     document.getElementById('btn-restore-reading').style.display = 'inline';
-
-    if (state.reading.round === 3) {
-        setTimeout(() => alert('Bạn đã xáo đủ 3/3 lần!\nTất cả các passage đã được bao phủ.\nLần sau sẽ bắt đầu chu kỳ mới.'), 150);
-    }
 }
 
 // Khôi phục đề gốc reading và xóa trạng thái xáo
@@ -2084,7 +2068,7 @@ function restoreReadingTests() {
     testKeys.forEach(key => { tests[key] = originalReadingTests[key]; });
 
     const state = getShuffleState();
-    state.reading = { usedByPos: [[], [], []], round: 0 };
+    state.reading = { round: 0 };
     saveShuffleState(state);
 
     currentTestId = 'reading_test1';
