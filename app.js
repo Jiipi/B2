@@ -170,21 +170,11 @@ const tests = {
     reading_test1: [
         {
             passage: {
-                title: "Passage 1",
+                title: "Passage 1<br><br>Cartography",
                 content: passage1Content
             },
-            title: "Questions 1-5",
-            instruction: "Complete each sentence with the correct ending, <b>A-G</b>, below.",
-            subHeader: `<div style="border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; display: inline-block;">
-                <div style="font-weight:bold; text-align:center; margin-bottom: 0.8rem;">List of endings</div>
-                <div style="margin-bottom:0.8rem;"><b>A.</b> teaches us about politics and commerce.</div>
-                <div style="margin-bottom:0.8rem;"><b>B.</b> indicates the main human settlements in late antiquity.</div>
-                <div style="margin-bottom:0.8rem;"><b>C.</b> is connected with studying and making maps.</div>
-                <div style="margin-bottom:0.8rem;"><b>D.</b> is for guidance and location of people.</div>
-                <div style="margin-bottom:0.8rem;"><b>E.</b> includes art and technical know-how.</div>
-                <div style="margin-bottom:0.8rem;"><b>F.</b> is of little use to people in small communities.</div>
-                <div><b>G.</b> is a difficult process.</div>
-            </div>`,
+            title: "Questions 1-13",
+            instruction: "<b>Questions 1-5</b><br>Complete each sentence with the correct ending, <b>A-G</b>, below.<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; display: inline-block;'><div style='font-weight:bold; text-align:center; margin-bottom: 0.8rem;'>List of endings</div><div style='margin-bottom:0.8rem;'><b>A.</b> teaches us about politics and commerce.</div><div style='margin-bottom:0.8rem;'><b>B.</b> indicates the main human settlements in late antiquity.</div><div style='margin-bottom:0.8rem;'><b>C.</b> is connected with studying and making maps.</div><div style='margin-bottom:0.8rem;'><b>D.</b> is for guidance and location of people.</div><div style='margin-bottom:0.8rem;'><b>E.</b> includes art and technical know-how.</div><div style='margin-bottom:0.8rem;'><b>F.</b> is of little use to people in small communities.</div><div><b>G.</b> is a difficult process.</div></div>",
             questions: [
                 { id: "r1q1", type: "gap_fill_flex", preText: "<b>1</b> \u00A0 At a basic level, cartography is a subject that", postText: "", answer: ["C", "c"], short: true },
                 { id: "r1q2", type: "gap_fill_flex", preText: "<b>2</b> \u00A0 Cartography also", postText: "", answer: ["E", "e"], short: true },
@@ -193,7 +183,7 @@ const tests = {
                 { id: "r1q5", type: "gap_fill_flex", preText: "<b>5</b> \u00A0 The main purpose of cartography", postText: "", answer: ["D", "d"], short: true },
                 { id: "r1_q6_instr", type: "text", text: "<br><b>Questions 6-11</b><br>Complete the table below. Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.<br><br><h3 class='section-title'>Maps among different peoples</h3>" },
                 { id: "r1_q6_text1", type: "text", text: "<div style='border-top:2px solid #000; padding-top:1rem;'><b>People:</b> Australian Aboriginals<br><b>Artefacts:</b>" },
-                { id: "r1q6", type: "gap_fill_flex", preText: "<b>6</b>", postText: "and drawings of animals", answer: ["songs"] },
+                { id: "r1q6", type: "gap_fill_flex", preText: "<b>6</b>", postText: "and drawings of animals", answer: ["bark"] },
                 { id: "r1q7", type: "gap_fill", preText: "<b>Purpose:</b> to guide souls in <b>7</b>", postText: "", answer: ["Dream Time", "dream time"] },
                 { id: "r1_q6_text2", type: "text", text: "<b>Other notes:</b> contained representations of totemic ancestors</div><div style='border-top:1px solid #ccc; margin-top:1rem; padding-top:1rem;'><b>People:</b> Marshall Islanders<br><b>Artefacts:</b> stick chart" },
                 { id: "r1q8", type: "gap_fill", preText: "<b>Purpose:</b> memory <b>8</b>", postText: "for navigators at sea", answer: ["aids"] },
@@ -220,12 +210,11 @@ const tests = {
         },
         {
             passage: {
-                title: "Passage 2",
+                title: "Passage 2<br><br>The History of Frozen Food",
                 content: passage2Content
             },
             title: "Questions 14-26",
-            instruction: "Complete the notes below. Choose <b>ONE WORD ONLY</b> from the passage for each answer.",
-            subHeader: "<h3 class='section-title' style='margin-top:0;'>The history of frozen food</h3>",
+            instruction: "<b>Questions 14-20</b><br>Complete the notes below. Choose <b>ONE WORD ONLY</b> from the passage for each answer.<br><br><h3 class='section-title' style='margin-top:0;'>The history of frozen food</h3>",
             questions: [
                 { id: "r1_text_p2_1", type: "text", text: "<strong>2,000 years ago, South America</strong>" },
                 { id: "r1q14", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 People conserved the nutritional value of <b>14</b>", postText: ", using a method of freezing then drying.", answer: ["potatoes", "Potatoes"] },
@@ -312,12 +301,11 @@ const tests = {
         },
         {
             passage: {
-                title: "Passage 3",
+                title: "Passage 3<br><br>The Hidden Life of Trees",
                 content: passage3Content
             },
             title: "Questions 27-40",
             instruction: "<b>Questions 27-30</b><br>Choose the correct letter, <b>A</b>, <b>B</b>, <b>C</b> or <b>D</b>.",
-            subHeader: "<h3 class='section-title' style='margin-top:0;'>The Hidden Life of Trees</h3>",
             questions: [
                 {
                     id: "r1q27", type: "multiple_choice",
@@ -694,25 +682,25 @@ const tests = {
                 content: reading_test3_passage1Content
             },
             title: "Questions 1-13",
-            instruction: "<b>Questions 1-5</b><br>Which paragraph contains the following information?<br>Write the correct letter, <b>A-F</b>.",
+            instruction: "<b>Questions 1-5</b><br>Which paragraph contains the following information?<br>Write the correct letter, <b>A-F</b>, in boxes 1-5.",
             questions: [
-                { id: "r3q1", type: "gap_fill_flex", preText: "<b>1.</b> \u00A0", postText: "A reference to a domestic situation that does not require multitasking", answer: ["B", "b"] },
-                { id: "r3q2", type: "gap_fill_flex", preText: "<b>2.</b> \u00A0", postText: "A possible explanation of why we always do multitask together", answer: ["E", "e"] },
-                { id: "r3q3", type: "gap_fill_flex", preText: "<b>3.</b> \u00A0", postText: "A practical solution to multitask in work environment", answer: ["F", "f"] },
-                { id: "r3q4", type: "gap_fill_flex", preText: "<b>4.</b> \u00A0", postText: "Relating multitasking to the size of prefrontal cortex", answer: ["C", "c"] },
-                { id: "r3q5", type: "gap_fill_flex", preText: "<b>5.</b> \u00A0", postText: "Longer time spent doing two tasks at the same time than one at a time", answer: ["D", "d"] },
+                { id: "r3q1", type: "gap_fill", preText: "<b>1.</b>", postText: "a reference to a domestic situation that does not require multitasking", answer: ["B", "b"] },
+                { id: "r3q2", type: "gap_fill", preText: "<b>2.</b>", postText: "a possible explanation of why we always do multitask together", answer: ["E", "e"] },
+                { id: "r3q3", type: "gap_fill", preText: "<b>3.</b>", postText: "a practical solution to multitask in work environment", answer: ["F", "f"] },
+                { id: "r3q4", type: "gap_fill", preText: "<b>4.</b>", postText: "relating multitasking to the size of prefrontal cortex", answer: ["C", "c"] },
+                { id: "r3q5", type: "gap_fill", preText: "<b>5.</b>", postText: "longer time spent doing two tasks at the same time than one at a time", answer: ["D", "d"] },
                 
-                { id: "r3_text_p1_6_instr", type: "text", text: "<br><b>Questions 6-10</b><br>Match each statement with the correct scientist, <b>A-E</b>.<br><i>NB You may use any letter more than once.</i><br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><div style='margin-bottom:0.8rem;'><b>A.</b> Thomas Lehman</div><div style='margin-bottom:0.8rem;'><b>B.</b> Earl Miller</div><div style='margin-bottom:0.8rem;'><b>C.</b> David Meyer</div><div style='margin-bottom:0.8rem;'><b>D.</b> Gloria Mark</div><div style='margin-bottom:0.8rem;'><b>E.</b> Edward Hallowell</div></div>" },
-                { id: "r3q6", type: "gap_fill_flex", preText: "<b>6.</b> \u00A0", postText: "When faced multiple visual stimulants, one can only concentrate on one of them.", answer: ["B", "b"] },
-                { id: "r3q7", type: "gap_fill_flex", preText: "<b>7.</b> \u00A0", postText: "Doing two things together may be faster but not better.", answer: ["D", "d"] },
-                { id: "r3q8", type: "gap_fill_flex", preText: "<b>8.</b> \u00A0", postText: "People never really do two things together even if you think you do.", answer: ["A", "a"] },
-                { id: "r3q9", type: "gap_fill_flex", preText: "<b>9.</b> \u00A0", postText: "The causes of multitask lie in the environment.", answer: ["E", "e"] },
-                { id: "r3q10", type: "gap_fill_flex", preText: "<b>10.</b> \u00A0", postText: "Even minor changes in the workplace will improve work efficiency.", answer: ["E", "e"] },
+                { id: "r3_text_p1_6_instr", type: "text", text: "<br><b>Questions 6-10</b><br>Match each statement with the correct scientist, <b>A-E</b>.<br>Write the correct letter, <b>A-E</b>, in boxes 6-10 on your answer sheet.<br><i>NB You may use any letter more than once.</i><br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><div style='margin-bottom:0.8rem;'><b>A.</b> Thomas Lehman</div><div style='margin-bottom:0.8rem;'><b>B.</b> Earl Miller</div><div style='margin-bottom:0.8rem;'><b>C.</b> David Meyer</div><div style='margin-bottom:0.8rem;'><b>D.</b> Gloria Mark</div><div style='margin-bottom:0.8rem;'><b>E.</b> Edward Hallowell</div></div>" },
+                { id: "r3q6", type: "gap_fill", preText: "<b>6.</b>", postText: "When faced multiple visual stimulants, one can only concentrate on one of them.", answer: ["B", "b"] },
+                { id: "r3q7", type: "gap_fill", preText: "<b>7.</b>", postText: "Doing two things together may be faster but not better.", answer: ["D", "d"] },
+                { id: "r3q8", type: "gap_fill", preText: "<b>8.</b>", postText: "People never really do two things together even if you think you do.", answer: ["A", "a"] },
+                { id: "r3q9", type: "gap_fill", preText: "<b>9.</b>", postText: "The causes of multitask lie in the environment.", answer: ["E", "e"] },
+                { id: "r3q10", type: "gap_fill", preText: "<b>10.</b>", postText: "Even minor changes in the workplace will improve work efficiency.", answer: ["E", "e"] },
 
-                { id: "r3_text_p1_11_instr", type: "text", text: "<br><b>Questions 11-13</b><br>Complete the sentences below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer." },
-                { id: "r3q11", type: "gap_fill_flex", preText: "- A term used to refer to a situation when you are reading a text and cannot focus on your surroundings is <b>11.</b>", postText: ".", answer: ["email voice", "Email voice", '"email voice"', "'email voice'"] },
-                { id: "r3q12", type: "gap_fill_flex", preText: "- The <b>12.</b>", postText: "part of the brain controls multitasking.", answer: ["prefrontal cortex", "Prefrontal cortex"] },
-                { id: "r3q13", type: "gap_fill_flex", preText: "- The practical solution of multitask in work is not to allow use of cellphone in <b>13.</b>", postText: "", answer: ["group meetings", "Group meetings"] }
+                { id: "r3_text_p1_11_instr", type: "text", text: "<br><b>Questions 11-13</b><br>Complete the sentences below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.<br>Write your answers in boxes 11-13 on your answer sheet." },
+                { id: "r3q11", type: "gap_fill", preText: "<b>11.</b> \u00A0 A term used to refer to a situation when you are reading a text and cannot focus on your surroundings is", postText: ".", answer: ["email voice", "Email voice", '"email voice"', "'email voice'"] },
+                { id: "r3q12", type: "gap_fill", preText: "<b>12.</b> \u00A0 The", postText: "part of the brain controls multitasking.", answer: ["prefrontal cortex", "Prefrontal cortex"] },
+                { id: "r3q13", type: "gap_fill", preText: "<b>13.</b> \u00A0 The practical solution of multitask in work is not to allow use of cellphone in", postText: ".", answer: ["group meetings", "Group meetings"] }
             ]
         },
         {
@@ -721,23 +709,23 @@ const tests = {
                 content: reading_test3_passage2Content
             },
             title: "Questions 14-26",
-            instruction: "<b>Questions 14-19</b><br>Reading Passage 2 has six paragraphs, <b>A-F</b>.<br>Choose the correct heading for each paragraph from the list of headings below.<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><b>List of Headings</b><br><br><div style='margin-bottom:0.8rem;'><b>i.</b> AI can improve the profitability of sporting businesses</div><div style='margin-bottom:0.8rem;'><b>ii.</b> Responses to criticisms of AI in sports coaching</div><div style='margin-bottom:0.8rem;'><b>iii.</b> A contrast between coaching today and in the past</div><div style='margin-bottom:0.8rem;'><b>iv.</b> An academic outlines some of the advantages of AI in sport</div><div style='margin-bottom:0.8rem;'><b>v.</b> The businesses responsible for creating AI software</div><div style='margin-bottom:0.8rem;'><b>vi.</b> The use of AI to decide the results of a competition</div><div style='margin-bottom:0.8rem;'><b>vii.</b> An academic study into a team sport in one country</div><div style='margin-bottom:0.8rem;'><b>viii.</b> The uses of AI in coaching a range of different sports</div></div>",
+            instruction: "<b>Questions 14-19</b><br>Reading Passage has six paragraphs, <b>A-F</b>.<br>Choose the correct heading for each paragraph from the list of headings below.<br>Write the correct number, <b>i-viii</b>, in boxes 14-19 on your answer sheet.<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><b>List of Headings</b><br><br><div style='margin-bottom:0.8rem;'><b>i.</b> AI can improve the profitability of sporting businesses</div><div style='margin-bottom:0.8rem;'><b>ii.</b> Responses to criticisms of AI in sports coaching</div><div style='margin-bottom:0.8rem;'><b>iii.</b> A contrast between coaching today and in the past</div><div style='margin-bottom:0.8rem;'><b>iv.</b> An academic outlines some of the advantages of AI in sport</div><div style='margin-bottom:0.8rem;'><b>v.</b> The businesses responsible for creating AI software</div><div style='margin-bottom:0.8rem;'><b>vi.</b> The use of AI to decide the results of a competition</div><div style='margin-bottom:0.8rem;'><b>vii.</b> An academic study into a team sport in one country</div><div style='margin-bottom:0.8rem;'><b>viii.</b> The uses of AI in coaching a range of different sports</div></div>",
             questions: [
-                { id: "r3q14", type: "gap_fill_flex", preText: "<b>14.</b> \u00A0 Paragraph A", postText: "", answer: ["iii", "III", "3"] },
-                { id: "r3q15", type: "gap_fill_flex", preText: "<b>15.</b> \u00A0 Paragraph B", postText: "", answer: ["vii", "VII", "7"] },
-                { id: "r3q16", type: "gap_fill_flex", preText: "<b>16.</b> \u00A0 Paragraph C", postText: "", answer: ["iv", "IV", "4"] },
-                { id: "r3q17", type: "gap_fill_flex", preText: "<b>17.</b> \u00A0 Paragraph D", postText: "", answer: ["viii", "VIII", "8"] },
-                { id: "r3q18", type: "gap_fill_flex", preText: "<b>18.</b> \u00A0 Paragraph E", postText: "", answer: ["vi", "VI", "6"] },
-                { id: "r3q19", type: "gap_fill_flex", preText: "<b>19.</b> \u00A0 Paragraph F", postText: "", answer: ["i", "I", "1"] },
-                { id: "r3_text_p2_20_instr", type: "text", text: "<br><b>Questions 20 and 21</b><br>Choose <b>TWO</b> letters, <b>A-E</b>.<br>Which <b>TWO</b> of these are proposed by Professor Rebecca Graves?<br>The list below gives some ways coaches could use AI:<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><div style='margin-bottom:0.8rem;'><b>A.</b> Speeding up analysis of data</div><div style='margin-bottom:0.8rem;'><b>B.</b> Personalising training programmes</div><div style='margin-bottom:0.8rem;'><b>C.</b> Improving mental toughness</div><div style='margin-bottom:0.8rem;'><b>D.</b> Reducing cost of sports coaching</div><div style='margin-bottom:0.8rem;'><b>E.</b> Identifying opponents' game plans</div></div>" },
-                { id: "r3q20", type: "gap_fill_flex", preText: "<b>20.</b> \u00A0", postText: "", answer: ["B", "b", "E", "e"] },
-                { id: "r3q21", type: "gap_fill_flex", preText: "<b>21.</b> \u00A0", postText: "", answer: ["B", "b", "E", "e"] },
-                { id: "r3_text_p2_22_instr", type: "text", text: "<br><b>Questions 22-26</b><br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer." },
-                { id: "r3q22", type: "gap_fill_flex", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Analysis of AI data by Dr Johann Muller suggests that teams that play defensively have fewer <b>22.</b>", postText: ".", answer: ["injuries", "Injuries"] },
-                { id: "r3q23", type: "gap_fill_flex", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 An Indian company has designed new <b>23.</b>", postText: "using AI technology.", answer: ["sneakers", "Sneakers"] },
-                { id: "r3q24", type: "gap_fill_flex", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 The use of AI in NASCAR is believed to improve <b>24.</b>", postText: "as well as driver performance.", answer: ["safety", "Safety"] },
-                { id: "r3q25", type: "gap_fill_flex", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Henri Simeonson says that <b>25.</b>", postText: "might be able to disrupt AI and make competitions unfair.", answer: ["hackers", "Hackers"] },
-                { id: "r3q26", type: "gap_fill_flex", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 In Minor League Baseball, a type of <b>26.</b>", postText: "powered by AI is giving the sport greater publicity.", answer: ["journalism", "Journalism"] }
+                { id: "r3q14", type: "gap_fill", preText: "<b>14.</b> \u00A0 Paragraph A", postText: "", answer: ["iii", "III", "3"] },
+                { id: "r3q15", type: "gap_fill", preText: "<b>15.</b> \u00A0 Paragraph B", postText: "", answer: ["vii", "VII", "7"] },
+                { id: "r3q16", type: "gap_fill", preText: "<b>16.</b> \u00A0 Paragraph C", postText: "", answer: ["iv", "IV", "4"] },
+                { id: "r3q17", type: "gap_fill", preText: "<b>17.</b> \u00A0 Paragraph D", postText: "", answer: ["viii", "VIII", "8"] },
+                { id: "r3q18", type: "gap_fill", preText: "<b>18.</b> \u00A0 Paragraph E", postText: "", answer: ["vi", "VI", "6"] },
+                { id: "r3q19", type: "gap_fill", preText: "<b>19.</b> \u00A0 Paragraph F", postText: "", answer: ["i", "I", "1"] },
+                { id: "r3_text_p2_20_instr", type: "text", text: "<br><b>Questions 20 and 21</b><br>Choose <b>TWO</b> letters, <b>A-E</b>.<br>Write the correct letters in boxes 20 and 21 on your answer sheet.<br>Which <b>TWO</b> of these are proposed by Professor Rebecca Graves?<br>The list below gives some ways coaches could use AI:<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><div style='margin-bottom:0.8rem;'><b>A.</b> Speeding up analysis of data</div><div style='margin-bottom:0.8rem;'><b>B.</b> Personalising training programmes</div><div style='margin-bottom:0.8rem;'><b>C.</b> Improving mental toughness</div><div style='margin-bottom:0.8rem;'><b>D.</b> Reducing cost of sports coaching</div><div style='margin-bottom:0.8rem;'><b>E.</b> Identifying opponents' game plans</div></div>" },
+                { id: "r3q20", type: "gap_fill", preText: "<b>20.</b>", postText: "", answer: ["B", "b"] },
+                { id: "r3q21", type: "gap_fill", preText: "<b>21.</b>", postText: "", answer: ["E", "e"] },
+                { id: "r3_text_p2_22_instr", type: "text", text: "<br><b>Questions 22-26</b><br>Complete the sentences below.<br>Choose <b>ONE WORD ONLY</b> from the passage for each answer.<br>Write your answers in boxes 22-26 on your answer sheet." },
+                { id: "r3q22", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Analysis of AI data by Dr Johann Muller suggests that teams that play defensively have fewer <b>22.</b>", postText: ".", answer: ["injuries", "Injuries"] },
+                { id: "r3q23", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 An Indian company has designed new <b>23.</b>", postText: "using AI technology.", answer: ["sneakers", "Sneakers"] },
+                { id: "r3q24", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 The use of AI in NASCAR is believed to improve <b>24.</b>", postText: "as well as driver performance.", answer: ["safety", "Safety"] },
+                { id: "r3q25", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 Henri Simeonson says that <b>25.</b>", postText: "might be able to disrupt AI and make competitions unfair.", answer: ["hackers", "Hackers"] },
+                { id: "r3q26", type: "gap_fill", preText: "<span style='margin-left:1rem'>&bull;</span> \u00A0 In Minor League Baseball, a type of <b>26.</b>", postText: "powered by AI is giving the sport greater publicity.", answer: ["journalism", "Journalism"] }
             ]
         },
         {
@@ -745,8 +733,8 @@ const tests = {
                 title: "Passage 3<br><br>How the mind ages",
                 content: reading_test3_passage3Content
             },
-            title: "Questions 27-40",
-            instruction: "<b>Questions 27-29</b><br>Choose the correct letter <b>A, B, C</b> or <b>D</b>.",
+            title: "Questions 27-29",
+            instruction: "Choose the correct letter <b>A, B, C</b> or <b>D</b>.<br>Write the correct letter in boxes 27-29 on your answer sheet.",
             questions: [
                 {
                     id: "r3q27", type: "multiple_choice",
@@ -780,22 +768,36 @@ const tests = {
                         { value: "D", label: "<b>D</b> \u00A0 the adults had clearer memories of chess games they had played" }
                     ],
                     answer: ["B"]
-                },
-                { id: "r3_text_p3_30_instr", type: "text", text: "<br><b>Questions 30-35</b><br>Complete the summary below. Choose <b>ONE WORD ONLY</b> from the passage for each answer.<br><br><b>Types of memory</b><br>" },
-                { id: "r3q30", type: "gap_fill_flex", preText: "Psychologists distinguish between two different types of memory: <b>30.</b>", postText: "and", answer: ["semantic", "Semantic"] },
-                { id: "r3q31", type: "gap_fill_flex", preText: "<b>31.</b>", postText: "memory. A study was conducted into people's knowledge of", answer: ["episodic", "Episodic"] },
-                { id: "r3q32", type: "gap_fill_flex", preText: "<b>32.</b>", postText: "to determine recall ability. This aspect of memory was found to be a function not of age but rather of length of tuition.", answer: ["algebra", "Algebra"] },
-                { id: "r3q33", type: "gap_fill_flex", preText: "<br>School also helps with a brain function called <b>33.</b>", postText: ". This is why a more highly educated person is generally more successful and does better in", answer: ["metamemory", "Metamemory"] },
-                { id: "r3q34", type: "gap_fill_flex", preText: "<b>34.</b>", postText: "tests.", answer: ["psychological", "Psychological"] },
-                { id: "r3q35", type: "gap_fill_flex", preText: "<br>Some of our mental functions remain unaffected by age or even improve. For example, as we get older, our knowledge of <b>35.</b>", postText: "increases.", answer: ["vocabulary", "Vocabulary"] },
-                
-                { id: "r3_text_p3_36_instr", type: "text", text: "<br><b>Questions 36-39</b><br>Look at the following statements and the list of people below.<br>Match each statement with the correct person, <b>A-E</b>.<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><b>List of People</b><br><br><div style='margin-bottom:0.8rem;'><b>A.</b> Stanley Rapoport</div><div style='margin-bottom:0.8rem;'><b>B.</b> Marion Diamond</div><div style='margin-bottom:0.8rem;'><b>C.</b> Warner Schaie</div><div style='margin-bottom:0.8rem;'><b>D.</b> Harry Bahrick</div><div style='margin-bottom:0.8rem;'><b>E.</b> Robert Kail</div></div>" },
-                { id: "r3q36", type: "gap_fill_flex", preText: "<b>36.</b> \u00A0", postText: "The educational system makes students aware of how their memory works.", answer: ["E", "e"] },
-                { id: "r3q37", type: "gap_fill_flex", preText: "<b>37.</b> \u00A0", postText: "Although older people may use a different mental approach when completing a task, they can still achieve the same result as younger people.", answer: ["A", "a"] },
-                { id: "r3q38", type: "gap_fill_flex", preText: "<b>38.</b> \u00A0", postText: "Being open to new ways of doing things can have a positive impact on your mental condition as we get older.", answer: ["C", "c"] },
-                { id: "r3q39", type: "gap_fill_flex", preText: "<b>39.</b> \u00A0", postText: "Both animals and humans need to exist in an environment full of interest.", answer: ["B", "b"] },
-                
-                { id: "r3_text_p3_40_instr", type: "text", text: "<br><b>Question 40</b>" },
+                }
+            ]
+        },
+        {
+            title: "Questions 30-35",
+            instruction: "Complete the summary below. Choose <b>ONE WORD ONLY</b> from the passage for each answer.<br>Write your answers in boxes 30-35 on your answer sheet.<br><br><b>Types of memory</b><br>",
+            inline: true,
+            questions: [
+                { id: "r3q30", type: "gap_fill", preText: "Psychologists distinguish between two different types of memory: <b>30.</b>", postText: "and", answer: ["semantic", "Semantic"] },
+                { id: "r3q31", type: "gap_fill", preText: "<b>31.</b>", postText: "memory. A study was conducted into people's knowledge of", answer: ["episodic", "Episodic"] },
+                { id: "r3q32", type: "gap_fill", preText: "<b>32.</b>", postText: "to determine recall ability. This aspect of memory was found to be a function not of age but rather of length of tuition.", answer: ["algebra", "Algebra"] },
+                { id: "r3q33", type: "gap_fill", preText: "<br>School also helps with a brain function called <b>33.</b>", postText: ". This is why a more highly educated person is generally more successful and does better in", answer: ["metamemory", "Metamemory"] },
+                { id: "r3q34", type: "gap_fill", preText: "<b>34.</b>", postText: "tests.", answer: ["psychological", "Psychological"] },
+                { id: "r3q35", type: "gap_fill", preText: "<br>Some of our mental functions remain unaffected by age or even improve. For example, as we get older, our knowledge of <b>35.</b>", postText: "increases.", answer: ["vocabulary", "Vocabulary"] }
+            ]
+        },
+        {
+            title: "Questions 36-39",
+            instruction: "Look at the following statements and the list of people below.<br>Match each statement with the correct person, <b>A-E</b>.<br>Write the correct letter, <b>A-E</b>, in boxes 36-39 on your answer sheet.<br><br><div style='border: 1px solid #000; padding: 1.5rem; margin-bottom: 2rem; margin-top: 1rem; display: inline-block;'><b>List of People</b><br><br><div style='margin-bottom:0.8rem;'><b>A.</b> Stanley Rapoport</div><div style='margin-bottom:0.8rem;'><b>B.</b> Marion Diamond</div><div style='margin-bottom:0.8rem;'><b>C.</b> Warner Schaie</div><div style='margin-bottom:0.8rem;'><b>D.</b> Harry Bahrick</div><div style='margin-bottom:0.8rem;'><b>E.</b> Robert Kail</div></div>",
+            questions: [
+                { id: "r3q36", type: "gap_fill", preText: "<b>36.</b>", postText: "The educational system makes students aware of how their memory works.", answer: ["E", "e"] },
+                { id: "r3q37", type: "gap_fill", preText: "<b>37.</b>", postText: "Although older people may use a different mental approach when completing a task, they can still achieve the same result as younger people.", answer: ["A", "a"] },
+                { id: "r3q38", type: "gap_fill", preText: "<b>38.</b>", postText: "Being open to new ways of doing things can have a positive impact on your mental condition as we get older.", answer: ["C", "c"] },
+                { id: "r3q39", type: "gap_fill", preText: "<b>39.</b>", postText: "Both animals and humans need to exist in an environment full of interest.", answer: ["B", "b"] }
+            ]
+        },
+        {
+            title: "Question 40",
+            instruction: "Choose the correct letter, <b>A, B, C</b> or <b>D</b>.<br>Write the correct letter in box 40 on your answer sheet.",
+            questions: [
                 {
                     id: "r3q40", type: "multiple_choice",
                     text: "<b>40</b> \u00A0 Which of the following sentences below best describe the essential information in the highlighted sentence in the passage?",
@@ -2203,7 +2205,7 @@ function renderTest() {
 
         if (part.passage) {
             const splitLayout = document.createElement('div');
-            splitLayout.className = 'reading-layout';
+            splitLayout.className = 'reading-normal-layout';
             
             const passagePane = document.createElement('div');
             passagePane.className = 'passage-pane';
@@ -2230,12 +2232,17 @@ function renderTest() {
             targetPane.appendChild(headerEl);
         }
 
-        const instrEl = document.createElement('div');
-        instrEl.className = 'part-instruction';
-        instrEl.innerHTML = part.instruction;
-        targetPane.appendChild(instrEl);
+        if (part.instruction) {
+            const instrEl = document.createElement('div');
+            instrEl.className = 'part-instruction';
+            instrEl.innerHTML = part.instruction;
+            targetPane.appendChild(instrEl);
+        }
 
         const questionsContainer = document.createElement('div');
+        if (part.inline) {
+            questionsContainer.className = 'inline-questions';
+        }
         if (part.boxStyle) {
             questionsContainer.style.border = "1px solid #000";
             questionsContainer.style.padding = "2rem";
