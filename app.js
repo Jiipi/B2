@@ -1489,7 +1489,7 @@ const tests = {
                         { value: "D", label: "D \u00A0 His parents were disappointed in him." },
                         { value: "E", label: "E \u00A0 His fellow students admired him." }
                     ],
-                    answer: ["A", "D"]
+                    answer: ["C", "E"]
                 },
                 { id: "t4_text_q23_24", type: "text", text: "<b>Questions 23 and 24</b>" },
                 {
@@ -1903,85 +1903,181 @@ function shuffleArray(arr) {
     return shuffled;
 }
 
-// Xáo trộn các part giữa 5 đề listening
-function shuffleListeningTests() {
-    const testKeys = ['test1', 'test2', 'test3', 'test4', 'test5'];
-
-    // Nhóm mỗi test thành 4 part
-    const allParts = testKeys.map(key => groupIntoParts(originalListeningTests[key]));
-
-    // Gom theo loại part: partsByType[i] = mảng 5 phần Part (i+1) từ 5 đề
-    const partsByType = [[], [], [], []];
-    allParts.forEach(testParts => {
-        testParts.forEach((part, idx) => {
-            if (idx < 4) partsByType[idx].push(part);
-        });
-    });
-
-    // Xáo trộn độc lập từng loại part
-    const shuffledByType = partsByType.map(parts => shuffleArray(parts));
-
-    // Ghép lại thành 5 đề mới
-    testKeys.forEach((key, testIdx) => {
-        const newTest = [];
-        shuffledByType.forEach(shuffledParts => {
-            newTest.push(...shuffledParts[testIdx]);
-        });
-        tests[key] = newTest;
-    });
-
-    // Re-render
-    document.getElementById('score-display').textContent = '';
-    renderTest();
-
-    // Hiện nút khôi phục
-    document.getElementById('btn-restore').style.display = 'inline';
+// --- Quản lý trạng thái xáo đề (lưu vào localStorage để nhớ giữa các lần dùng) ---
+function getShuffleState() {
+    try {
+        const s = localStorage.getItem('b2_shuffleState');
+        if (s) return JSON.parse(s);
+    } catch (e) {}
+    return {
+        listening: { usedByPos: [[], [], [], []], round: 0 },
+        reading:   { usedByPos: [[], [], []], round: 0 }
+    };
 }
 
-// Khôi phục đề gốc listening
+function saveShuffleState(state) {
+    try { localStorage.setItem('b2_shuffleState', JSON.stringify(state)); } catch (e) {}
+}
+
+function updateShuffleProgressUI() {
+    const state = getShuffleState();
+    const lEl = document.getElementById('listening-progress');
+    if (lEl) {
+        const r = state.listening.round;
+        lEl.textContent = r > 0 ? `(Lần ${r}/5)` : '';
+    }
+    const rEl = document.getElementById('reading-progress');
+    if (rEl) {
+        const r = state.reading.round;
+        rEl.textContent = r > 0 ? `(Lần ${r}/3)` : '';
+    }
+}
+
+// Xáo thông minh: mỗi lần chọn các part chưa xuất hiện ở lần xáo trước
+function shuffleListeningTests() {
+    const testKeys = ['test1', 'test2', 'test3', 'test4', 'test5'];
+    // allParts[testIdx][partPos] = các section thuộc part đó
+    const allParts = testKeys.map(key => groupIntoParts(originalListeningTests[key]));
+
+    const state = getShuffleState();
+    let usedByPos = state.listening.usedByPos;
+
+    // Nếu tất cả 4 vị trí đã dùng hết 5 đề → reset để bắt đầu chu kỳ mới
+    const allDone = usedByPos.every(used => used.length >= 5);
+    if (allDone) {
+        usedByPos = [[], [], [], []];
+        state.listening.round = 0;
+        state.listening.usedByPos = usedByPos;
+        saveShuffleState(state);
+    }
+
+    // Với mỗi vị trí part (0-3), chọn ngẫu nhiên một đề chưa được dùng ở vị trí đó
+    const selectedIndices = [];
+    for (let pos = 0; pos < 4; pos++) {
+        const available = [0, 1, 2, 3, 4].filter(i => !usedByPos[pos].includes(i));
+        const picked = available[Math.floor(Math.random() * available.length)];
+        selectedIndices.push(picked);
+        usedByPos[pos].push(picked);
+    }
+
+    state.listening.round++;
+    state.listening.usedByPos = usedByPos;
+    saveShuffleState(state);
+
+    // Ghép thành 1 đề: Part 1 từ đề selectedIndices[0], Part 2 từ đề selectedIndices[1], ...
+    const newTest = [];
+    for (let pos = 0; pos < 4; pos++) {
+        newTest.push(...allParts[selectedIndices[pos]][pos]);
+    }
+    tests['test1'] = newTest;
+
+    // Tự động chuyển sang test1 để hiển thị
+    currentTestId = 'test1';
+    const selector = document.getElementById('test-selector');
+    if (selector) selector.value = 'test1';
+    const titleEl = document.getElementById('test-title');
+    if (titleEl) titleEl.textContent = `Listening Xáo - Lần ${state.listening.round}/5`;
+
+    document.getElementById('score-display').textContent = '';
+    renderTest();
+    updateShuffleProgressUI();
+    document.getElementById('btn-restore').style.display = 'inline';
+
+    if (state.listening.round === 5) {
+        setTimeout(() => alert('Bạn đã xáo đủ 5/5 lần!\nTất cả các part đã được bao phủ.\nLần sau sẽ bắt đầu chu kỳ mới.'), 150);
+    }
+}
+
+// Khôi phục đề gốc listening và xóa trạng thái xáo
 function restoreListeningTests() {
     const testKeys = ['test1', 'test2', 'test3', 'test4', 'test5'];
     testKeys.forEach(key => { tests[key] = originalListeningTests[key]; });
+
+    const state = getShuffleState();
+    state.listening = { usedByPos: [[], [], [], []], round: 0 };
+    saveShuffleState(state);
+
+    currentTestId = 'test1';
+    const selector = document.getElementById('test-selector');
+    if (selector) selector.value = 'test1';
+    const titleEl = document.getElementById('test-title');
+    if (titleEl) titleEl.textContent = 'Practice test 1';
+
     document.getElementById('score-display').textContent = '';
     renderTest();
+    updateShuffleProgressUI();
     document.getElementById('btn-restore').style.display = 'none';
 }
 
-// Xáo trộn các passage giữa 3 đề reading
+// Xáo thông minh reading: mỗi lần chọn các passage chưa xuất hiện ở lần xáo trước
 function shuffleReadingTests() {
     const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
 
-    // Mỗi reading test có 3 passage (3 phần tử trong mảng), tương ứng Passage 1, 2, 3
-    // passagesByPos[i] = mảng 3 passage ở vị trí i từ 3 đề
-    const passagesByPos = [[], [], []];
-    testKeys.forEach(key => {
-        originalReadingTests[key].forEach((passage, idx) => {
-            if (idx < 3) passagesByPos[idx].push(passage);
-        });
-    });
+    const state = getShuffleState();
+    let usedByPos = state.reading.usedByPos;
 
-    // Xáo trộn độc lập từng vị trí passage
-    const shuffledByPos = passagesByPos.map(passages => shuffleArray(passages));
+    // Nếu tất cả 3 vị trí đã dùng hết 3 đề → reset
+    const allDone = usedByPos.every(used => used.length >= 3);
+    if (allDone) {
+        usedByPos = [[], [], []];
+        state.reading.round = 0;
+        state.reading.usedByPos = usedByPos;
+        saveShuffleState(state);
+    }
 
-    // Ghép lại thành 3 đề mới
-    testKeys.forEach((key, testIdx) => {
-        tests[key] = shuffledByPos.map(shuffledPassages => shuffledPassages[testIdx]);
-    });
+    // Với mỗi vị trí passage (0-2), chọn ngẫu nhiên một đề chưa được dùng ở vị trí đó
+    const selectedIndices = [];
+    for (let pos = 0; pos < 3; pos++) {
+        const available = [0, 1, 2].filter(i => !usedByPos[pos].includes(i));
+        const picked = available[Math.floor(Math.random() * available.length)];
+        selectedIndices.push(picked);
+        usedByPos[pos].push(picked);
+    }
 
-    // Re-render
+    state.reading.round++;
+    state.reading.usedByPos = usedByPos;
+    saveShuffleState(state);
+
+    // Ghép thành 1 đề reading: Passage 1 từ đề selectedIndices[0], ...
+    tests['reading_test1'] = selectedIndices.map(
+        (testIdx, pos) => originalReadingTests[testKeys[testIdx]][pos]
+    );
+
+    // Tự động chuyển sang reading_test1
+    currentTestId = 'reading_test1';
+    const selector = document.getElementById('test-selector');
+    if (selector) selector.value = 'reading_test1';
+    const titleEl = document.getElementById('test-title');
+    if (titleEl) titleEl.textContent = `Reading Xáo - Lần ${state.reading.round}/3`;
+
     document.getElementById('score-display').textContent = '';
     renderTest();
-
-    // Hiện nút khôi phục
+    updateShuffleProgressUI();
     document.getElementById('btn-restore-reading').style.display = 'inline';
+
+    if (state.reading.round === 3) {
+        setTimeout(() => alert('Bạn đã xáo đủ 3/3 lần!\nTất cả các passage đã được bao phủ.\nLần sau sẽ bắt đầu chu kỳ mới.'), 150);
+    }
 }
 
-// Khôi phục đề gốc reading
+// Khôi phục đề gốc reading và xóa trạng thái xáo
 function restoreReadingTests() {
     const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
     testKeys.forEach(key => { tests[key] = originalReadingTests[key]; });
+
+    const state = getShuffleState();
+    state.reading = { usedByPos: [[], [], []], round: 0 };
+    saveShuffleState(state);
+
+    currentTestId = 'reading_test1';
+    const selector = document.getElementById('test-selector');
+    if (selector) selector.value = 'reading_test1';
+    const titleEl = document.getElementById('test-title');
+    if (titleEl) titleEl.textContent = 'Practice Reading Test 1';
+
     document.getElementById('score-display').textContent = '';
     renderTest();
+    updateShuffleProgressUI();
     document.getElementById('btn-restore-reading').style.display = 'none';
 }
 
@@ -2033,6 +2129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     renderTest();
     setupEventListeners();
+    updateShuffleProgressUI();
 });
 
 function renderTest() {
