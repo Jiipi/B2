@@ -2012,6 +2012,22 @@ function restoreListeningTests() {
 }
 
 // Xáo thông minh reading: mỗi lần chọn các passage chưa xuất hiện ở lần xáo trước
+// Group test parts into 3 passage buckets (each bucket = all parts belonging to that passage)
+function getReadingPassageGroups(testParts) {
+    const groups = [];
+    let current = null;
+    for (const part of testParts) {
+        if (part.passage) {
+            if (current) groups.push(current);
+            current = [part];
+        } else if (current) {
+            current.push(part);
+        }
+    }
+    if (current) groups.push(current);
+    return groups; // [[...passage1 parts], [...passage2 parts], [...passage3 parts]]
+}
+
 function shuffleReadingTests() {
     const testKeys = ['reading_test1', 'reading_test2', 'reading_test3'];
 
@@ -2041,8 +2057,8 @@ function shuffleReadingTests() {
     saveShuffleState(state);
 
     // Ghép thành 1 đề reading: Passage 1 từ đề selectedIndices[0], ...
-    tests['reading_test1'] = selectedIndices.map(
-        (testIdx, pos) => originalReadingTests[testKeys[testIdx]][pos]
+    tests['reading_test1'] = selectedIndices.flatMap(
+        (testIdx, pos) => getReadingPassageGroups(originalReadingTests[testKeys[testIdx]])[pos]
     );
 
     // Tự động chuyển sang reading_test1
