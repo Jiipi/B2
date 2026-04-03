@@ -2034,9 +2034,8 @@ function shuffleReadingTests() {
     const allParts = testKeys.map(key => getReadingPassageGroups(originalReadingTests[key]));
 
     const state = getShuffleState();
-    if (!state.reading.usedByPos || !Array.isArray(state.reading.usedByPos) || state.reading.usedByPos.length !== 3) {
-        state.reading.usedByPos = [[], [], []];
-        state.reading.round = 0;
+    if (!state.reading || !Array.isArray(state.reading.usedByPos) || state.reading.usedByPos.length !== 3) {
+        state.reading = { usedByPos: [[], [], []], round: 0 };
     }
     let usedByPos = state.reading.usedByPos;
 
