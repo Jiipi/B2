@@ -493,7 +493,7 @@ const tests = {
                 title: "Passage 2<br><br>Life in 2045",
                 content: reading_test2_passage2Content
             },
-            title: "Questions 14-24",
+            title: "Questions 14-26",
             instruction: "<b>Questions 14-20</b><br>Complete the summary below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.",
             questions: [
                 { id: "r2q14", type: "gap_fill_flex", preText: "Alex Ayad predicts that by 2045 <b>14</b>", postText: "will be available for sale online.", answer: ["emotions", "Emotions"] },
@@ -733,7 +733,7 @@ const tests = {
                 title: "Passage 3<br><br>How the mind ages",
                 content: reading_test3_passage3Content
             },
-            title: "Questions 27-29",
+            title: "Questions 27-40",
             instruction: "Choose the correct letter <b>A, B, C</b> or <b>D</b>.<br>Write the correct letter in boxes 27-29 on your answer sheet.",
             questions: [
                 {
