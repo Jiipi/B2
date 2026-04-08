@@ -1948,6 +1948,45 @@ Theo tôi, cả hai phương pháp đều quan trọng. Học sinh nên dùng t�
 <li><strong>approach</strong>: phương pháp, cách tiếp cận</li>
 </ul>`
         }
+    ],
+    writing_test4: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 - Đề 2</h3>
+<p><strong>You should spend about 40 minutes on this task.</strong></p>
+<p><strong>These days, young people can obtain credit cards more easily than in the past. Do the advantages of this development outweigh the disadvantages?</strong></p>
+<p><strong>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</strong></p>
+<p><strong>Write at least 250 words.</strong></p>`,
+            sample: `<p><strong>Introduction</strong><br>
+These days, young people can obtain credit cards more easily than in the past. In my opinion, the advantages of this development outweigh the disadvantages.</p>
+<p><strong>Body 1</strong><br>
+Firstly, credit cards are very convenient. Young people do not need to carry cash and can make payments quickly and safely. They are also extremely useful in emergencies, such as paying hospital bills or urgent travel expenses. Furthermore, using a credit card when travelling abroad is much easier than exchanging cash in different countries.</p>
+<p><strong>Body 2</strong><br>
+However, there are also some disadvantages. Some young people may overspend and fail to manage their finances properly, which can lead to serious debt problems. They may also struggle to pay back the full amount on time, causing additional interest charges.</p>
+<p><strong>Conclusion</strong><br>
+In conclusion, credit cards have both benefits and drawbacks. However, I believe the advantages are more significant because they make daily life more convenient and provide financial security during emergencies. If young people use credit cards responsibly, they can be a very useful financial tool.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>Introduction</strong><br>
+Ngày nay, người trẻ có thể có được thẻ tín dụng dễ dàng hơn trước. Theo tôi, lợi ích của sự phát triển này lớn hơn nhược điểm.</p>
+<p><strong>Body 1</strong><br>
+Thứ nhất, thẻ tín dụng rất tiện lợi. Người trẻ không cần mang tiền mặt và có thể thanh toán nhanh và an toàn. Chúng cũng cực kỳ hữu ích trong các trường hợp khẩn cấp như thanh toán viện phí hay chi phí du lịch gấp. Hơn nữa, dùng thẻ tín dụng khi đi nước ngoài dễ hơn nhiều so với đổi tiền mặt ở các nước khác nhau.</p>
+<p><strong>Body 2</strong><br>
+Tuy nhiên, cũng có một số nhược điểm. Một số người trẻ có thể tiêu quá nhiều và không quản lý tài chính đúng cách, dẫn đến các vấn đề nợ nghiêm trọng. Họ cũng có thể gặp khó khăn khi trả đủ số tiền đúng hạn, gây ra các khoản lãi phát sinh thêm.</p>
+<p><strong>Conclusion</strong><br>
+Kết luận, thẻ tín dụng có cả lợi ích và hạn chế. Tuy nhiên, tôi tin lợi ích quan trọng hơn vì chúng giúp cuộc sống hàng ngày tiện lợi hơn và cung cấp sự bảo đảm tài chính trong trường hợp khẩn cấp. Nếu người trẻ dùng thẻ có trách nhiệm, chúng có thể là công cụ tài chính rất hữu ích.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>obtain</strong>: có được</li>
+<li><strong>outweigh</strong>: lớn hơn, vượt trội</li>
+<li><strong>overspend</strong>: tiêu quá mức</li>
+<li><strong>finances</strong>: tài chính</li>
+<li><strong>debt</strong>: nợ</li>
+<li><strong>interest charges</strong>: phí lãi suất</li>
+<li><strong>drawback</strong>: hạn chế, nhược điểm</li>
+<li><strong>responsibly</strong>: một cách có trách nhiệm</li>
+</ul>`
+        }
     ]
 };
 
@@ -2225,6 +2264,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Writing Task 1 - Đề 2 (Table có thời gian)';
             } else if (currentTestId === 'writing_test3') {
                 document.getElementById('test-title').textContent = 'Writing Task 2 (Essay)';
+            } else if (currentTestId === 'writing_test4') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 2 (Essay)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
