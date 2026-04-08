@@ -2406,6 +2406,71 @@ document.addEventListener('DOMContentLoaded', () => {
     updateShuffleProgressUI();
 });
 
+// --- Gemini AI Writing Scorer ---
+const GEMINI_API_KEY = 'AIzaSyCTFZYHkmiD_cOpX9V61bI_hEcZNK0K7K4';
+
+async function scoreWritingWithGemini(essayText, taskType, taskPrompt, minWords) {
+    const wordCount = essayText.trim().split(/\s+/).filter(w => w.length > 0).length;
+    
+    const systemPrompt = `Bạn là giám khảo chấm IELTS Writing chuyên nghiệp. Hãy chấm bài viết sau theo đúng 4 tiêu chí IELTS Writing, cho điểm band từ 1.0 đến 9.0 (bước 0.5).
+
+ĐỀ BÀI:
+${taskPrompt}
+
+Loại bài: IELTS Writing ${taskType}
+Yêu cầu tối thiểu: ${minWords} từ
+Số từ thực tế: ${wordCount} từ
+
+BÀI VIẾT CỦA THÍ SINH:
+${essayText}
+
+Hãy trả lời bằng tiếng Việt theo ĐÚNG format HTML sau (không dùng markdown, chỉ dùng HTML tags):
+
+<h3>📊 KẾT QUẢ CHẤM ĐIỂM IELTS WRITING</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%;border-collapse:collapse;margin:1rem 0;">
+<tr style="background:#f0f0f0;"><th>Tiêu chí</th><th>Band</th></tr>
+<tr><td><strong>Task Achievement</strong> (Hoàn thành yêu cầu đề)</td><td style="text-align:center;font-weight:bold;">[điểm]</td></tr>
+<tr><td><strong>Coherence & Cohesion</strong> (Mạch lạc & Liên kết)</td><td style="text-align:center;font-weight:bold;">[điểm]</td></tr>
+<tr><td><strong>Lexical Resource</strong> (Từ vựng)</td><td style="text-align:center;font-weight:bold;">[điểm]</td></tr>
+<tr><td><strong>Grammatical Range & Accuracy</strong> (Ngữ pháp)</td><td style="text-align:center;font-weight:bold;">[điểm]</td></tr>
+<tr style="background:#e0f2fe;"><td><strong>OVERALL BAND SCORE</strong></td><td style="text-align:center;font-weight:bold;font-size:1.2em;">[điểm tổng]</td></tr>
+</table>
+
+<h4>📝 Nhận xét chi tiết:</h4>
+<p><strong>✅ Điểm mạnh:</strong><br>[liệt kê 2-3 điểm mạnh]</p>
+<p><strong>⚠️ Điểm cần cải thiện:</strong><br>[liệt kê 2-3 điểm yếu cụ thể, dẫn chứng câu sai nếu có]</p>
+<p><strong>💡 Lời khuyên:</strong><br>[2-3 gợi ý giúp cải thiện band score]</p>`;
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+    
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            contents: [{ parts: [{ text: systemPrompt }] }],
+            generationConfig: {
+                temperature: 0.3,
+                maxOutputTokens: 2048
+            }
+        })
+    });
+    
+    if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error?.message || `HTTP ${response.status}`);
+    }
+    
+    const data = await response.json();
+    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Không nhận được kết quả từ AI.';
+    
+    // Clean up: if AI returns markdown-style formatting, convert basic patterns
+    return aiText
+        .replace(/```html\n?/g, '')
+        .replace(/```\n?/g, '')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+}
+
 function renderTest() {
     const container = document.getElementById('test-container');
     container.innerHTML = '';
@@ -2462,6 +2527,41 @@ function renderTest() {
             
             editorPane.appendChild(textarea);
             editorPane.appendChild(wordCount);
+            // --- AI Scoring button ---
+            const aiScoreBtn = document.createElement('button');
+            aiScoreBtn.className = 'btn';
+            aiScoreBtn.textContent = '🤖 Chấm điểm bằng AI';
+            aiScoreBtn.style.cssText = 'background:#fef3c7; margin-bottom:0.5rem;';
+            editorPane.appendChild(aiScoreBtn);
+            
+            const scoreResultBox = document.createElement('div');
+            scoreResultBox.className = 'score-result-box';
+            editorPane.appendChild(scoreResultBox);
+            
+            const isTask1 = currentTestId.includes('writing_test1') || currentTestId.includes('writing_test2');
+            const minWords = isTask1 ? 150 : 250;
+            
+            aiScoreBtn.addEventListener('click', async () => {
+                const text = textarea.value.trim();
+                if (!text || text.length < 20) {
+                    scoreResultBox.innerHTML = '<p style="color:#dc2626;font-weight:bold;">⚠️ Vui lòng viết bài trước khi chấm điểm!</p>';
+                    scoreResultBox.style.display = 'block';
+                    return;
+                }
+                scoreResultBox.innerHTML = '<p style="color:#2563eb;font-weight:bold;">⏳ Đang chấm bằng AI, vui lòng chờ...</p>';
+                scoreResultBox.style.display = 'block';
+                aiScoreBtn.disabled = true;
+                try {
+                    const taskType = isTask1 ? 'Task 1' : 'Task 2';
+                    const taskPrompt = part.prompt.replace(/<[^>]*>/g, ' ').trim();
+                    const aiResult = await scoreWritingWithGemini(text, taskType, taskPrompt, minWords);
+                    scoreResultBox.innerHTML = aiResult;
+                } catch (err) {
+                    scoreResultBox.innerHTML = `<p style="color:#dc2626;font-weight:bold;">❌ Lỗi: ${err.message}</p><p>Vui lòng thử lại sau.</p>`;
+                }
+                aiScoreBtn.disabled = false;
+            });
+            
             editorPane.appendChild(sampleBtn);
             editorPane.appendChild(sampleBox);
             splitLayout.appendChild(editorPane);

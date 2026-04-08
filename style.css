@@ -331,6 +331,20 @@ h3.section-title {
     overflow-y: auto;
 }
 
+.score-result-box {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    background: #fffbeb;
+    border: 1px solid #fcd34d;
+    border-radius: 4px;
+    display: none;
+    font-size: 11pt;
+    line-height: 1.6;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
     body {
