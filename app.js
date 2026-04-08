@@ -2028,6 +2028,88 @@ Kết luận, trí thông minh là phẩm chất quan trọng của lãnh đạo
 <li><strong>empathy</strong>: sự đồng cảm</li>
 </ul>`
         }
+    ],
+    writing_test6: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 - Đề 4</h3>
+<p><strong>You should spend about 40 minutes on this task.</strong></p>
+<p><strong>Today, fashion strongly influences people's lives. In your opinion, are the negative effects of this influence greater than the positive ones?</strong></p>
+<p><strong>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</strong></p>
+<p><strong>Write at least 250 words.</strong></p>`,
+            sample: `<p><strong>Introduction</strong><br>
+Today, fashion strongly influences people's lives. In my opinion, the negative effects of this influence are greater than the positive ones.</p>
+<p><strong>Body 1</strong><br>
+On the one hand, fashion can have some positive effects. It allows people to express their personality and creativity through their clothing choices. Following trends can also help people feel more confident and socially accepted, especially among young people.</p>
+<p><strong>Body 2</strong><br>
+However, I believe the negative effects are more serious. Social media and celebrities create enormous pressure on people to follow the latest trends. As a result, many people spend too much money on clothes they do not really need, which can cause financial problems. Secondly, people may become overly focused on appearance and forget more important values in life.</p>
+<p><strong>Conclusion</strong><br>
+In conclusion, fashion has both positive and negative effects on society. However, I believe the negative influences are more significant because they can damage people's financial health and mental wellbeing. People should be more aware of these dangers.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>Introduction</strong><br>
+Ngày nay, thời trang ảnh hưởng mạnh mẽ đến cuộc sống của mọi người. Theo tôi, những tác động tiêu cực của ảnh hưởng này lớn hơn những tác động tích cực.</p>
+<p><strong>Body 1</strong><br>
+Một mặt, thời trang có thể có một số tác động tích cực. Nó cho phép mọi người thể hiện cá tính và sự sáng tạo qua lựa chọn trang phục. Việc theo xu hướng cũng giúp mọi người cảm thấy tự tin hơn và được xã hội chấp nhận, đặc biệt là giới trẻ.</p>
+<p><strong>Body 2</strong><br>
+Tuy nhiên, tôi tin những tác động tiêu cực nghiêm trọng hơn. Mạng xã hội và người nổi tiếng tạo ra áp lực rất lớn lên mọi người để theo xu hướng mới nhất. Kết quả là, người tiêu quá nhiều tiền vào quần áo không thực sự cần thiết, gây ra vấn đề tài chính. Thứ hai, mọi người có thể quá tập trung vào ngoại hình và quên đi những giá trị quan trọng hơn trong cuộc sống.</p>
+<p><strong>Conclusion</strong><br>
+Kết luận, thời trang có cả tác động tích cực và tiêu cực lên xã hội. Tuy nhiên, tôi tin những ảnh hưởng tiêu cực đáng kể hơn vì chúng có thể gây hại đến sức khỏe tài chính và tinh thần của mọi người. Mọi người nên nhận thức rõ hơn về những nguy hiểm này.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>influence</strong>: ảnh hưởng</li>
+<li><strong>express</strong>: thể hiện</li>
+<li><strong>personality</strong>: cá tính</li>
+<li><strong>creativity</strong>: sự sáng tạo</li>
+<li><strong>socially accepted</strong>: được xã hội chấp nhận</li>
+<li><strong>enormous</strong>: rất lớn</li>
+<li><strong>overly</strong>: quá mức</li>
+<li><strong>appearance</strong>: ngoại hình</li>
+<li><strong>mental wellbeing</strong>: sức khỏe tinh thần</li>
+<li><strong>aware</strong>: nhận thức, ý thức</li>
+</ul>`
+        }
+    ],
+    writing_test7: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 - Đề 5</h3>
+<p><strong>You should spend about 40 minutes on this task.</strong></p>
+<p><strong>Many people believe that news coverage today is becoming increasingly biased. What are the main reasons for this problem and what solutions can you suggest?</strong></p>
+<p><strong>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</strong></p>
+<p><strong>Write at least 250 words.</strong></p>`,
+            sample: `<p><strong>Introduction</strong><br>
+Many people believe that news coverage today is becoming increasingly biased. This essay will discuss the main reasons for this problem and suggest possible solutions.</p>
+<p><strong>Body 1 (Reasons)</strong><br>
+Firstly, many news companies are mainly focused on making profit. To attract more readers, they use shocking headlines and exaggerated stories. Some reporters also choose to present only one side of an issue, which gives audiences a misleading picture. In addition, social media makes it very easy for biased information to spread quickly.</p>
+<p><strong>Body 2 (Solutions)</strong><br>
+To solve this problem, news organizations should hire professional fact-checkers to verify information before publishing. Governments could also introduce stronger regulations to ensure fair and accurate reporting. Most importantly, people should develop critical thinking skills and read news from a variety of different sources before forming an opinion.</p>
+<p><strong>Conclusion</strong><br>
+In conclusion, biased news is a serious problem in modern society, but it can be reduced if news companies, governments, and the public all work together responsibly.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>Introduction</strong><br>
+Nhiều người tin rằng việc đưa tin ngày nay ngày càng trở nên thiên lệch. Bài luận này sẽ thảo luận những nguyên nhân chính của vấn đề này và đề xuất các giải pháp khả thi.</p>
+<p><strong>Body 1 (Nguyên nhân)</strong><br>
+Thứ nhất, nhiều công ty tin tức chủ yếu tập trung vào việc kiếm lợi nhuận. Để thu hút nhiều độc giả hơn, họ dùng những tiêu đề gây sốc và những câu chuyện phóng đại. Một số phóng viên cũng chỉ trình bày một chiều của vấn đề, khiến khán giả có cái nhìn sai lệch. Ngoài ra, mạng xã hội khiến thông tin thiên lệch lan truyền rất nhanh.</p>
+<p><strong>Body 2 (Giải pháp)</strong><br>
+Để giải quyết vấn đề này, các tổ chức tin tức nên thuê người kiểm chứng thông tin chuyên nghiệp để xác minh trước khi đăng. Chính phủ cũng có thể ban hành các quy định chặt chẽ hơn để đảm bảo việc đưa tin công bằng và chính xác. Quan trọng nhất, mọi người nên phát triển kỹ năng tư duy phản biện và đọc tin tức từ nhiều nguồn khác nhau trước khi đưa ra ý kiến.</p>
+<p><strong>Conclusion</strong><br>
+Kết luận, tin tức thiên lệch là vấn đề nghiêm trọng trong xã hội hiện đại, nhưng có thể giảm bớt nếu các công ty tin tức, chính phủ và công chúng cùng hợp tác có trách nhiệm.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>coverage</strong>: việc đưa tin</li>
+<li><strong>increasingly</strong>: ngày càng</li>
+<li><strong>biased</strong>: thiên lệch</li>
+<li><strong>profit</strong>: lợi nhuận</li>
+<li><strong>exaggerated</strong>: phóng đại</li>
+<li><strong>misleading</strong>: gây hiểu nhầm</li>
+<li><strong>fact-checker</strong>: người kiểm chứng thông tin</li>
+<li><strong>verify</strong>: xác minh</li>
+<li><strong>regulation</strong>: quy định</li>
+<li><strong>critical thinking</strong>: tư duy phản biện</li>
+</ul>`
+        }
     ]
 };
 
@@ -2309,6 +2391,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 2 (Essay)';
             } else if (currentTestId === 'writing_test5') {
                 document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 3 (Essay)';
+            } else if (currentTestId === 'writing_test6') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 4 (Essay)';
+            } else if (currentTestId === 'writing_test7') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 5 (Essay)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
