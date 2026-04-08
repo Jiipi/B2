@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:ieltstopper.wordpress.com)",
+      "WebFetch(domain:mini-ielts.com)",
+      "WebFetch(domain:www.ieltsreading.info)",
+      "WebFetch(domain:www.ieltsolve.com)",
+      "WebFetch(domain:ieltsextremes.com)",
+      "WebFetch(domain:www.ieltsxpress.com)"
+    ]
+  }
+}

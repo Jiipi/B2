@@ -694,7 +694,7 @@ const tests = {
                 { id: "r3q6", type: "gap_fill", preText: "<b>6.</b>", postText: "When faced multiple visual stimulants, one can only concentrate on one of them.", answer: ["B", "b"] },
                 { id: "r3q7", type: "gap_fill", preText: "<b>7.</b>", postText: "Doing two things together may be faster but not better.", answer: ["D", "d"] },
                 { id: "r3q8", type: "gap_fill", preText: "<b>8.</b>", postText: "People never really do two things together even if you think you do.", answer: ["A", "a"] },
-                { id: "r3q9", type: "gap_fill", preText: "<b>9.</b>", postText: "The causes of multitask lie in the environment.", answer: ["E", "e"] },
+                { id: "r3q9", type: "gap_fill", preText: "<b>9.</b>", postText: "The causes of multitask lie in the environment.", answer: ["D", "d"] },
                 { id: "r3q10", type: "gap_fill", preText: "<b>10.</b>", postText: "Even minor changes in the workplace will improve work efficiency.", answer: ["E", "e"] },
 
                 { id: "r3_text_p1_11_instr", type: "text", text: "<br><b>Questions 11-13</b><br>Complete the sentences below.<br>Choose <b>NO MORE THAN TWO WORDS</b> from the passage for each answer.<br>Write your answers in boxes 11-13 on your answer sheet." },
