@@ -1912,6 +1912,42 @@ Vào năm 2010, TQ có 30.000 sinh viên, cao hơn nhiều so với các quốc 
 <p><strong>B2 - Body (Nhóm tăng nhẹ / ổn định: South Korea + Others)</strong><br>
 Hàn Quốc có 15.000 sinh viên vào năm 2010 và con số này tăng nhẹ lên 18.000 vào năm 2015, trước khi giảm nhẹ xuống 17.000 vào năm 2020. Nhóm "các nước khác" tăng đều hơn, từ 20.000 vào năm 2010 lên 25.000 vào năm 2015 và 28.000 vào năm 2020. Mặc dù hai nhóm này không tăng nhanh như Ấn Độ hoặc Việt Nam, họ vẫn đóng góp 1 số lượng đáng kể sinh viên quốc tế cho trường đại học.</p>`
         }
+    ],
+    writing_test3: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2</h3>
+<p><strong>You should spend about 40 minutes on this task.</strong></p>
+<p><strong>Some people think students should use online resources for learning, while others believe printed books are better.</strong></p>
+<p><strong>Discuss both views and give your own opinion.</strong></p>
+<p><strong>Write at least 250 words.</strong></p>`,
+            sample: `<p><strong>Introduction</strong><br>
+Some people think students should use online resources for learning, while others believe printed books are better. In this essay, I will discuss both views and give my opinion.</p>
+<p><strong>Body 1</strong><br>
+On the one hand, online resources are very convenient. Students can study any time and anywhere using the internet. They can watch educational videos, read articles, and complete interactive exercises. These tools make learning more engaging and help students understand difficult topics more easily. Moreover, online resources are often free, so students can save money.</p>
+<p><strong>Body 2</strong><br>
+On the other hand, printed books are also very effective. Students can focus better because there are fewer distractions compared to using a phone or computer. They can write notes and highlight important information directly in the book, which helps them remember lessons more clearly. In addition, books do not require electricity or internet access.</p>
+<p><strong>Conclusion</strong><br>
+In my opinion, both methods are important. Students should use online materials for quick learning and books for deeper understanding. In conclusion, combining both approaches is the best choice.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>Introduction</strong><br>
+Một số người cho rằng học sinh nên dùng tài liệu trực tuyến, trong khi những người khác tin sách in tốt hơn. Trong bài này, tôi sẽ thảo luận cả hai quan điểm và đưa ra ý kiến.</p>
+<p><strong>Body 1</strong><br>
+Một mặt, tài liệu trực tuyến rất tiện lợi. Học sinh có thể học bất cứ lúc nào và ở bất cứ đâu nhờ internet. Họ có thể xem video giáo dục, đọc bài viết và hoàn thành các bài tập tương tác. Những công cụ này làm cho việc học thú vị hơn và giúp học sinh hiểu các chủ đề khó dễ hơn. Hơn nữa, tài liệu trực tuyến thường miễn phí nên học sinh có thể tiết kiệm tiền.</p>
+<p><strong>Body 2</strong><br>
+Mặt khác, sách in cũng rất hiệu quả. Học sinh có thể tập trung tốt hơn vì có ít yếu tố gây xao nhãng hơn so với dùng điện thoại hay máy tính. Họ có thể ghi chú và đánh dấu thông tin quan trọng ngay trong sách, giúp nhớ bài rõ hơn. Ngoài ra, sách không cần điện hay kết nối internet.</p>
+<p><strong>Conclusion</strong><br>
+Theo tôi, cả hai phương pháp đều quan trọng. Học sinh nên dùng tài liệu trực tuyến để học nhanh và sách để hiểu sâu hơn. Kết luận, kết hợp cả hai cách là lựa chọn tốt nhất.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>educational</strong>: mang tính giáo dục</li>
+<li><strong>interactive</strong>: tương tác</li>
+<li><strong>engaging</strong>: thú vị, hấp dẫn</li>
+<li><strong>distraction</strong>: thứ gây xao nhãng</li>
+<li><strong>approach</strong>: phương pháp, cách tiếp cận</li>
+</ul>`
+        }
     ]
 };
 
@@ -2186,7 +2222,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (currentTestId === 'writing_test1') {
                 document.getElementById('test-title').textContent = 'Writing Task 1 (Table)';
             } else if (currentTestId === 'writing_test2') {
-                document.getElementById('test-title').textContent = 'Writing Task 2 (Table có thời gian)';
+                document.getElementById('test-title').textContent = 'Writing Task 1 - Đề 2 (Table có thời gian)';
+            } else if (currentTestId === 'writing_test3') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (Essay)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
