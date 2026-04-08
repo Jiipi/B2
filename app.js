@@ -2407,7 +2407,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- Gemini AI Writing Scorer ---
-const GEMINI_API_KEY = 'AIzaSyCTFZYHkmiD_cOpX9V61bI_hEcZNK0K7K4';
+const GEMINI_API_KEY = 'AIzaSyB59acFDDcLiUEoZMeEVL6-Ef8nA4lUe-s';
 
 async function scoreWritingWithGemini(essayText, taskType, taskPrompt, minWords) {
     const wordCount = essayText.trim().split(/\s+/).filter(w => w.length > 0).length;
