@@ -1822,7 +1822,95 @@ Overall, people in Viet Nam and Thailand spend the highest proportions of their 
 <p><strong>B1 (Nhóm VN + TL + Japan)</strong><br>
 Looking at food and housing, Vietnamese households spends 35% of their income on food, the highest figure among all countries, compared with 30% in Thailand and only 20% in Japan. In contrast, housing takes up 30% of income in Japan and 35% in the USA, which are higher than the figures for VN and TL, at 25% and 22% respectively. France is in the middle, with 25% for food and 28% for housing.</p>
 <p><strong>B2 (N2: Transport + Education)</strong><br>
-For transport, the USA has the highest proportion, at 30%, followed by Japan with 25% and France with 20%. Viet Nam and TL spends less on this category, at 15% and 18%. Education accounts for the smallest share of income in all five countries. Viet Nam still spends the most on education at 10%, while the USA spends the least, at only 5%. The figures for TL, Japan and France are between 6% and 8%.</p>`
+For transport, the USA has the highest proportion, at 30%, followed by Japan with 25% and France with 20%. Viet Nam and TL spends less on this category, at 15% and 18%. Education accounts for the smallest share of income in all five countries. Viet Nam still spends the most on education at 10%, while the USA spends the least, at only 5%. The figures for TL, Japan and France are between 6% and 8%.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>I - Introduction</strong><br>
+Bảng cho thấy tỷ lệ thu nhập hộ gia đình được chi cho 4 hạng mục, cụ thể là thực phẩm, nhà ở, giao thông và giáo dục, ở năm quốc gia khác nhau.</p>
+<p><strong>O - overview</strong><br>
+Nhìn chung, người dân ở VN và Thái Lan chi phần lớn thu nhập cho thực phẩm, trong khi các hộ gia đình ở Mỹ và Nhật Bản chi nhiều nhất cho nhà ở và giao thông. Chi tiêu cho giáo dục là thấp nhất ở cả năm quốc gia.</p>
+<p><strong>B1 (Nhóm VN + TL + Japan)</strong><br>
+Xét về thực phẩm và nhà ở, các hộ gia đình VN chi 35% thu nhập cho thực phẩm, đây là con số cao nhất trong tất cả các quốc gia, so với 30% ở Thái Lan và chỉ 20% ở Nhật Bản. Ngược lại, nhà ở chiếm 30% thu nhập ở Nhật Bản và 35% ở Mỹ, cao hơn so với Việt Nam và Thái Lan, lần lượt là 25% và 22%. Pháp nằm ở mức trung bình, với 25% cho thực phẩm và 28% cho nhà ở.</p>
+<p><strong>B2 (N2: Transport + Education)</strong><br>
+Đối với giao thông, Mỹ có tỷ lệ cao nhất, ở mức 30%, tiếp theo là Nhật Bản với 25% và Pháp với 20%. Việt Nam và Thái Lan chi ít hơn cho hạng mục này, lần lượt là 15% và 18%. Giáo dục chiếm tỷ lệ nhỏ nhất trong thu nhập ở tất cả các quốc gia. Việt Nam vẫn chi nhiều nhất cho giáo dục với 10%, trong khi Mỹ chi ít nhất, chỉ 5%. Các số liệu của Thái Lan, Nhật Bản và Pháp nằm trong khoảng từ 6% đến 8%.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>household income</strong>: thu nhập hộ gia đình</li>
+<li><strong>spend</strong>: chi tiêu</li>
+<li><strong>highest</strong>: cao nhất</li>
+<li><strong>lowest</strong>: thấp nhất</li>
+<li><strong>similar</strong>: tương tự</li>
+<li><strong>compared with</strong>: so với</li>
+<li><strong>while</strong>: trong khi</li>
+<li><strong>in contrast</strong>: ngược lại</li>
+<li><strong>figure</strong>: con số / <strong>proportion</strong>: tỷ lệ</li>
+</ul>`
+        }
+    ],
+    writing_test2: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2</h3>
+<p><strong>You should spend about 20 minutes on this task.</strong></p>
+<p><strong>The table below gives information about the number of international students (in thousands) studying at a university in Australia in 2010, 2015 and 2020.</strong></p>
+<p><strong>Summarise the information by selecting and reporting the main features, and make comparisons where relevant.</strong></p>
+<p><strong>Write at least 150 words.</strong></p>
+<table border="1" cellpadding="5" cellspacing="0" style="width:100%; text-align:center; margin-top:1rem; border-collapse: collapse;">
+  <tr>
+    <th>Country/Region</th>
+    <th>2010 (Thousand)</th>
+    <th>2015 (Thousand)</th>
+    <th>2020 (Thousand)</th>
+  </tr>
+  <tr>
+    <td>China</td>
+    <td>30</td>
+    <td>40</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>India</td>
+    <td>10</td>
+    <td>20</td>
+    <td>35</td>
+  </tr>
+  <tr>
+    <td>VietNam</td>
+    <td>5</td>
+    <td>12</td>
+    <td>20</td>
+  </tr>
+  <tr>
+    <td>South Korea</td>
+    <td>15</td>
+    <td>18</td>
+    <td>17</td>
+  </tr>
+  <tr>
+    <td>Others</td>
+    <td>20</td>
+    <td>25</td>
+    <td>28</td>
+  </tr>
+</table>`,
+            sample: `<p><strong>I - Introduction</strong><br>
+The table illustrates the number of international students, measured in thousands, from five different countries and regions studying at a university in Australia in 2010, 2015 and 2020.</p>
+<p><strong>O - overview</strong><br>
+Overall, the total number of overseas students at this university increased over the period. China remained the largest sources of international students, while India and VN showed the most significant growth between 2010 and 2020.</p>
+<p><strong>B1 (Nhóm tăng mạnh - China, India, VietNam)</strong><br>
+In 2010, China had 30,000 students, which was much higher than any other country. This figure rose steadily to 40,000 in 2015 and 50,000 in 2020. India started with only 10,000 students in 2010 but more than doubled to 20,000 in 2015 and reached 35,000 by 2020. VietNam showed a similar upward trend, increasing from 5000 to 12000 and then to 20000 students over the same period.</p>
+<p><strong>B2 - Body (Nhóm tăng nhẹ / ổn định: South Korea + Others)</strong><br>
+South Korea had 15,000 students in 2010 and this number grew slightly to 18,000 in 2015, before falling marginally to 17,000 in 2020. The category of Other countries increased more gradually, from 20,000 in 2010 to 25000 in 2015 and 28000 in 2020. Although these two groups did not grow as fast as India or VN, they still contributed a considerable number of international students to the university.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>I - Introduction</strong><br>
+Bảng minh họa số lượng sinh viên quốc tế từ năm quốc gia và khu vực khác nhau học tại 1 trường đại học ở Úc vào các năm 2010, 2015 và 2020.</p>
+<p><strong>O - overview</strong><br>
+Nhìn chung, tổng số sinh viên nước ngoài tại trường đại học này đã tăng trong giai đoạn này. Trung Quốc vẫn là nguồn sinh viên quốc tế lớn nhất, trong khi Ấn Độ và Việt Nam cho thấy mức tăng trưởng đáng kể từ 2010 đến 2020.</p>
+<p><strong>B1 (Nhóm tăng mạnh - China, India, VietNam)</strong><br>
+Vào năm 2010, TQ có 30.000 sinh viên, cao hơn nhiều so với các quốc gia khác. Con số này tăng đều lên 40.000 vào năm 2015 và đạt 50.000 vào năm 2020. Ấn Độ bắt đầu với chỉ 10.000 sinh viên vào năm 2010 nhưng đã tăng hơn gấp đôi lên 20.000 vào năm 2015 và đạt 35.000 vào năm 2020. VN cũng cho thấy xu hướng tăng tương tự, tăng từ 5.000 lên 12.000 và sau đó lên 20.000 sinh viên trong cùng giai đoạn.</p>
+<p><strong>B2 - Body (Nhóm tăng nhẹ / ổn định: South Korea + Others)</strong><br>
+Hàn Quốc có 15.000 sinh viên vào năm 2010 và con số này tăng nhẹ lên 18.000 vào năm 2015, trước khi giảm nhẹ xuống 17.000 vào năm 2020. Nhóm "các nước khác" tăng đều hơn, từ 20.000 vào năm 2010 lên 25.000 vào năm 2015 và 28.000 vào năm 2020. Mặc dù hai nhóm này không tăng nhanh như Ấn Độ hoặc Việt Nam, họ vẫn đóng góp 1 số lượng đáng kể sinh viên quốc tế cho trường đại học.</p>`
         }
     ]
 };
@@ -2097,6 +2185,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Practice Reading Test 3';
             } else if (currentTestId === 'writing_test1') {
                 document.getElementById('test-title').textContent = 'Writing Task 1 (Table)';
+            } else if (currentTestId === 'writing_test2') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (Table có thời gian)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
