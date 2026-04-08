@@ -274,36 +274,33 @@ h3.section-title {
     padding-right: 0;
 }
 
-/* Writing Layout */
+/* Writing Layout Vertical Stack */
 .writing-layout {
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .writing-prompt-pane {
-    flex: 1;
+    width: 100%;
     font-size: 11pt;
     line-height: 1.6;
-    height: 75vh;
-    overflow-y: auto;
-    padding-right: 1.5rem;
-    border-right: 1px solid #ccc;
+    border: 1px solid #ccc;
     background: #fafafa;
     padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .writing-editor-pane {
-    flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    height: 75vh;
 }
 
 .essay-textarea {
-    flex: 1;
     width: 100%;
-    resize: none;
+    min-height: 300px;
+    resize: vertical;
     font-family: inherit;
     font-size: 11pt;
     line-height: 1.5;
