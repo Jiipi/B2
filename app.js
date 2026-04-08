@@ -1763,7 +1763,7 @@ const tests = {
             ]
         }
     ],
-    writing_test: [
+    writing_test1: [
         {
             isWriting: true,
             prompt: `<h3>Writing Task 1</h3>
@@ -1845,7 +1845,9 @@ Xét về thực phẩm và nhà ở, các hộ gia đình VN chi 35% thu nhập
 <li><strong>in contrast</strong>: ngược lại</li>
 <li><strong>figure</strong>: con số / <strong>proportion</strong>: tỷ lệ</li>
 </ul>`
-        },
+        }
+    ],
+    writing_test2: [
         {
             isWriting: true,
             prompt: `<h3>Writing Task 2</h3>
@@ -2181,8 +2183,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Practice Reading Test 2';
             } else if (currentTestId === 'reading_test3') {
                 document.getElementById('test-title').textContent = 'Practice Reading Test 3';
-            } else if (currentTestId === 'writing_test') {
-                document.getElementById('test-title').textContent = 'Practice Writing Test';
+            } else if (currentTestId === 'writing_test1') {
+                document.getElementById('test-title').textContent = 'Writing Task 1 (Table)';
+            } else if (currentTestId === 'writing_test2') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 (Table có thời gian)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
