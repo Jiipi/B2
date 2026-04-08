@@ -1987,6 +1987,47 @@ Kết luận, thẻ tín dụng có cả lợi ích và hạn chế. Tuy nhiên,
 <li><strong>responsibly</strong>: một cách có trách nhiệm</li>
 </ul>`
         }
+    ],
+    writing_test5: [
+        {
+            isWriting: true,
+            prompt: `<h3>Writing Task 2 - Đề 3</h3>
+<p><strong>You should spend about 40 minutes on this task.</strong></p>
+<p><strong>Some people claim that intelligence is the most important quality of a leader. To what extent do you agree or disagree?</strong></p>
+<p><strong>Give reasons for your answer and include any relevant examples from your own knowledge or experience.</strong></p>
+<p><strong>Write at least 250 words.</strong></p>`,
+            sample: `<p><strong>Introduction</strong><br>
+Some people claim that intelligence is the most important quality of a leader. I partly agree with this idea.</p>
+<p><strong>Body 1</strong><br>
+On the one hand, intelligence is clearly very important. It helps leaders make smart decisions and solve complex problems quickly. For example, an intelligent leader can develop effective strategies to improve their organization or respond well during a crisis. Without intelligence, it would be very difficult to lead successfully.</p>
+<p><strong>Body 2</strong><br>
+On the other hand, a leader also needs other important qualities. They should be honest and trustworthy so that people respect them. Good communication skills are also essential because leaders must explain their ideas clearly and motivate others. In addition, a leader needs to be empathetic and understand the needs of their team.</p>
+<p><strong>Conclusion</strong><br>
+In conclusion, intelligence is an important quality for a leader, but it is not the only factor. A truly great leader needs both strong intelligence and good personal qualities such as honesty, communication skills, and empathy.</p>
+<hr>
+<h3>Bản dịch:</h3>
+<p><strong>Introduction</strong><br>
+Một số người cho rằng trí thông minh là phẩm chất quan trọng nhất của một nhà lãnh đạo. Tôi đồng ý một phần với ý kiến này.</p>
+<p><strong>Body 1</strong><br>
+Một mặt, trí thông minh rõ ràng rất quan trọng. Nó giúp lãnh đạo đưa ra quyết định thông minh và giải quyết vấn đề phức tạp nhanh chóng. Ví dụ, một lãnh đạo thông minh có thể phát triển chiến lược hiệu quả để cải thiện tổ chức hoặc ứng phó tốt trong khủng hoảng. Không có trí thông minh, việc lãnh đạo thành công sẽ rất khó.</p>
+<p><strong>Body 2</strong><br>
+Mặt khác, lãnh đạo cũng cần những phẩm chất quan trọng khác. Họ nên trung thực và đáng tin cậy để mọi người tôn trọng. Kỹ năng giao tiếp tốt cũng thiết yếu vì lãnh đạo phải giải thích ý tưởng rõ ràng và thúc đẩy người khác. Ngoài ra, lãnh đạo cần có sự đồng cảm và hiểu nhu cầu của đội nhóm.</p>
+<p><strong>Conclusion</strong><br>
+Kết luận, trí thông minh là phẩm chất quan trọng của lãnh đạo, nhưng không phải là yếu tố duy nhất. Một lãnh đạo thực sự vĩ đại cần cả trí thông minh lẫn các phẩm chất cá nhân tốt như trung thực, kỹ năng giao tiếp và sự đồng cảm.</p>
+<h4>Từ vựng nổi bật:</h4>
+<ul>
+<li><strong>claim</strong>: khẳng định, tuyên bố</li>
+<li><strong>quality</strong>: phẩm chất</li>
+<li><strong>complex</strong>: phức tạp</li>
+<li><strong>strategy</strong>: chiến lược</li>
+<li><strong>crisis</strong>: khủng hoảng</li>
+<li><strong>trustworthy</strong>: đáng tin cậy</li>
+<li><strong>essential</strong>: thiết yếu</li>
+<li><strong>motivate</strong>: thúc đẩy</li>
+<li><strong>empathetic</strong>: có sự đồng cảm</li>
+<li><strong>empathy</strong>: sự đồng cảm</li>
+</ul>`
+        }
     ]
 };
 
@@ -2266,6 +2307,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('test-title').textContent = 'Writing Task 2 (Essay)';
             } else if (currentTestId === 'writing_test4') {
                 document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 2 (Essay)';
+            } else if (currentTestId === 'writing_test5') {
+                document.getElementById('test-title').textContent = 'Writing Task 2 - Đề 3 (Essay)';
             }
             document.getElementById('score-display').textContent = '';
             renderTest();
